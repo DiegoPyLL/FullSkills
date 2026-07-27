@@ -27,6 +27,8 @@ Formato: `Técnica | ATT&CK | Precondición | Efecto | Detección | Mitigación`
 | SEO poisoning / malvertising | T1189 | Búsqueda de software popular | Descarga de instalador troyanizado | Descarga de instalador desde dominio no oficial | Application control, allow-list de fuentes de software |
 | Drive-by compromise | T1189 | Visita a sitio con exploit kit | Ejecución sin interacción | Navegador que lanza procesos hijo | Navegador actualizado, aislamiento, EDR |
 | Watering hole | T1189 | Sitio de nicho que la víctima frecuenta | Ataque dirigido de bajo ruido | Difícil; depende del EDR en el endpoint | Aislamiento de navegación, parcheo |
+| Spearphishing por voz (vishing dirigido) | T1566.004 | Número o identidad suplantados por el atacante | Entrega credenciales o instala software por teléfono | Correlación de llamada entrante con instalación o login posterior | Verificación de identidad fuera de banda, formación específica a roles expuestos |
+| Inyección de contenido en tránsito | T1659 | Posición de red (AitM) sobre tráfico no cifrado | Inserta script, redirección o payload en una respuesta legítima | Contenido de respuesta distinto entre rutas de red; TLS ausente donde debería existir | HSTS y HTTPS estricto, DNS cifrado, detección de AitM en la red |
 
 ## Explotación de servicios expuestos
 
@@ -50,6 +52,7 @@ Es el vector con **mejor relación coste/beneficio** para el atacante: no genera
 | Credential stuffing | T1110.004 | Volcado de otra brecha | Acceso por reutilización | Alta tasa de fallo desde IP distribuidas | MFA, detección de bots, contraseñas comprometidas bloqueadas |
 | Credenciales de infostealer | T1078 | Malware en un equipo personal o BYOD | Cookies de sesión + contraseñas del navegador | Sesión reutilizada desde otro dispositivo | Token protection, dispositivos gestionados, MFA por sesión |
 | Cuentas por defecto | T1078.001 | Dispositivo o software sin configurar | Acceso administrativo | Escaneo de credenciales por defecto | Cambio obligatorio en el despliegue |
+| Cuentas de dominio | T1078.002 | Credencial de AD/Entra ID obtenida | Acceso con los privilegios y el alcance de la cuenta de dominio | Login fuera del patrón habitual del usuario; uso desde host no gestionado | MFA en todo acceso de dominio, acceso condicional, segmentación de cuentas admin vs. estándar |
 | Secretos filtrados en repositorios | T1552.001 | Commit con clave | Acceso a API o nube | Escaneo de secretos, alertas del proveedor | Escaneo en pre-commit y en el historial, rotación automática |
 
 ## Cadena de suministro y relaciones de confianza
@@ -64,6 +67,7 @@ Es el vector con **mejor relación coste/beneficio** para el atacante: no genera
 | Relación de confianza (MSP, proveedor) | T1199 | Acceso legítimo del proveedor | Entrada por la puerta lateral | Acceso del proveedor fuera de horario o de alcance | Acceso JIT para terceros, MFA propio, segmentación por proveedor |
 | Compromiso de imagen de contenedor | T1195.002 | Imagen base o de registro alterada | Ejecución en todos los despliegues | Firma ausente, escaneo, drift respecto al Dockerfile | Firma de imágenes (cosign), registro propio, imágenes mínimas |
 | Actualización maliciosa | T1195.002 | Canal de actualización comprometido | Ejecución con privilegios de instalación | Actualización desde un origen inesperado | Verificación de firma, pinning de certificado |
+| Compromiso de la cadena de suministro de hardware | T1195.003 | Manipulación durante fabricación, envío o mantenimiento del equipo | Implante persistente a nivel de firmware/hardware, difícil de erradicar con reinstalación | Comportamiento anómalo desde el arranque; discrepancia de hash de firmware frente al fabricante | Cadena de custodia verificable, atestación de firmware, adquisición por canales de confianza |
 
 ## Físico y periférico
 
@@ -73,6 +77,7 @@ Es el vector con **mejor relación coste/beneficio** para el atacante: no genera
 | Hardware añadido | T1200 | Acceso físico | Implante de red o teclado | Inventario de dispositivos USB/red | Control de puertos, seguridad física, 802.1X |
 | Acceso físico a consola | T1200 | Acceso al equipo | Arranque desde medio externo, extracción de disco | Registro de acceso físico | Cifrado de disco con TPM+PIN, contraseña de firmware, arranque seguro |
 | Wi-Fi corporativo comprometido | T1078 | PSK compartida o EAP mal configurado | Acceso a la red interna | Dispositivos no gestionados en la red | 802.1X con certificados, red de invitados aislada |
+| Ataque a redes Wi-Fi (evil twin, deauth, captura de handshake) | T1669 | Alcance de radiofrecuencia del SSID objetivo | Acceso a la red o captura de credenciales por punto de acceso falso | WIDS: SSID duplicado, ráfaga de tramas de deauth | WIDS/WIPS, 802.11w (PMF), EAP-TLS en vez de PSK |
 
 ## Cómo priorizar defensivamente
 

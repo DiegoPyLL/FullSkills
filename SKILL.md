@@ -1,6 +1,6 @@
 ---
 name: ciberseguridad
-description: Base de conocimiento de ciberseguridad para razonar (no solo listar) sobre vulnerabilidades, CVEs, threat intelligence, respuesta a incidentes, blue/red team, threat hunting, malware, Active Directory, cloud, contenedores, firewalls, VPN, sistemas operativos, seguridad de IA/LLM/agentes, supply chain, web, mobile, OT/ICS, Zero Trust y MITRE ATT&CK. Se invoca cuando la pregunta es de seguridad ofensiva, defensiva, forense o de arquitectura, o cuando hay que analizar un CVE, una técnica de ataque, una detección o un incidente.
+description: Base de conocimiento de ciberseguridad para razonar (no solo listar) sobre vulnerabilidades, CVEs, threat intelligence, respuesta a incidentes, blue/red team, threat hunting, malware, Active Directory, cloud, contenedores, firewalls, VPN, sistemas operativos, seguridad de IA/LLM/agentes, supply chain, web, mobile, OT/ICS, Zero Trust, MITRE ATT&CK, IoT, blockchain, pentesting, bug bounty, forense digital, privacidad, hardware, TLS y protocolos de red. Se invoca cuando la pregunta es de seguridad ofensiva, defensiva, forense o de arquitectura, o cuando hay que analizar un CVE, una técnica de ataque, una detección o un incidente.
 ---
 
 # Skill de Ciberseguridad — índice y protocolo
@@ -177,6 +177,48 @@ Base común obligatoria: [playbooks/ir_base.md](playbooks/ir_base.md). Específi
 [hyper-v](playbooks/hyperv.md)
 
 **Fuentes externas**: [references/references.md](references/references.md)
+
+**Infraestructura, OT, IoT y hardware**
+
+| Tema | Módulo |
+|---|---|
+| OT / ICS: PLC, SCADA, DCS, SIS, protocolo industrial | [ot_ics/ot_ics.md](ot_ics/ot_ics.md) |
+| IoT / embebidos: firmware, protocolos, ciclo de vida | [iot/iot.md](iot/iot.md) |
+| Seguridad de hardware: side-channel, Spectre/Meltdown, TPM, Secure Boot | [hardware/hardware.md](hardware/hardware.md) |
+| TLS y cifrado en transporte | [tls/tls.md](tls/tls.md) |
+| Blockchain / Web3: smart contracts, DeFi, wallets | [blockchain/blockchain.md](blockchain/blockchain.md) |
+
+**Threat Intelligence**
+
+| Tema | Módulo |
+|---|---|
+| Metodología CTI: niveles, ciclos, fuentes, STIX/TAXII | [cti/cti.md](cti/cti.md) |
+| IOC, pirámide del dolor, formatos, TIP | [ioc/ioc.md](ioc/ioc.md) |
+
+**Pruebas de penetración**
+
+| Tema | Módulo |
+|---|---|
+| Metodología: fases PTES, tipos de prueba, reglas de engagement | [pentesting/pentesting.md](pentesting/pentesting.md) |
+| Atomic Red Team (validación de detecciones) | [art/art.md](art/art.md) |
+
+**Bug Bounty / Vulnerability Disclosure**
+
+| Tema | Módulo |
+|---|---|
+| Programas, plataformas, severidad, métricas | [bug_bounty/bug_bounty.md](bug_bounty/bug_bounty.md) |
+
+**Forense digital**
+
+| Tema | Módulo |
+|---|---|
+| Metodología forense: adquisición, análisis de disco/memoria/AD, cadena de custodia | [forensics/forensics.md](forensics/forensics.md) |
+
+**Privacidad y protección de datos**
+
+| Tema | Módulo |
+|---|---|
+| GDPR, LGPD, CCPA, HIPAA, DPIA, Privacy by Design, derechos del interesado | [privacy/privacy.md](privacy/privacy.md) |
 
 ## 5. Convenciones de los módulos
 
