@@ -1,5 +1,5 @@
 ---
-name: ciberseguridad
+name: security
 description: Base de conocimiento de ciberseguridad para razonar (no solo listar) sobre vulnerabilidades, CVEs, threat intelligence, respuesta a incidentes, blue/red team, threat hunting, malware, Active Directory, cloud, contenedores, firewalls, VPN, sistemas operativos, seguridad de IA/LLM/agentes, supply chain, web, mobile, OT/ICS, Zero Trust, MITRE ATT&CK, IoT, blockchain, pentesting, bug bounty, forense digital, privacidad, hardware, TLS y protocolos de red. Se invoca cuando la pregunta es de seguridad ofensiva, defensiva, forense o de arquitectura, o cuando hay que analizar un CVE, una técnica de ataque, una detección o un incidente.
 ---
 

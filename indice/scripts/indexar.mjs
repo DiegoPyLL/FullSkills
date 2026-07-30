@@ -1,25 +1,32 @@
 #!/usr/bin/env node
 // Generador del índice global del repositorio (skill `indice`).
 //
-//   node scripts/indexar.mjs           -> reescribe INDICE.md
-//   node scripts/indexar.mjs --check   -> no escribe; sale 1 si INDICE.md está desactualizado
-//                                         o si hay enlaces rotos
+//   node indice/scripts/indexar.mjs           -> reescribe indice/INDICE.md
+//   node indice/scripts/indexar.mjs --check   -> no escribe; sale 1 si INDICE.md está
+//                                                desactualizado o si hay enlaces rotos
 //
 // Sin dependencias. Solo lee ficheros .md del repositorio.
+//
+// El repositorio se despliega con su contenido suelto dentro del `.claude/skills/` del
+// proyecto anfitrión: cada carpeta de primer nivel con SKILL.md es una skill invocable.
+// De ahí que el índice viva en `indice/` y no en la raíz — un SKILL.md en la raíz
+// quedaría en `.claude/skills/SKILL.md`, que no se descubre.
 
 import { readdirSync, readFileSync, writeFileSync, statSync, existsSync } from 'node:fs';
 import { join, relative, dirname, resolve, sep, posix } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const SALIDA = join(ROOT, 'INDICE.md');
-const IGNORAR = new Set(['.git', 'node_modules', 'scripts']);
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..');
+const SALIDA = join(ROOT, 'indice', 'INDICE.md');
+const SALIDA_RUTA = 'indice/INDICE.md';
+const IGNORAR = new Set(['.git', '.claude', 'node_modules', 'scripts']);
 const CHECK = process.argv.includes('--check');
 
 // Nombre legible de cada dominio de primer nivel. Los que no estén aquí se
 // listan igual, con el nombre de la carpeta como título.
 const DOMINIOS = {
   '.': 'Raíz',
+  indice: 'Índice',
   security: 'Ciberseguridad',
   backend: 'Backend',
   seo: 'SEO',
@@ -133,6 +140,13 @@ function huerfanos(docs) {
 
 // ---------------------------------------------------------------- render
 
+// El índice vive en `indice/`, así que todo enlace a un documento de fuera sube un nivel.
+const enlaceDesdeIndice = (ruta) =>
+  (ruta.startsWith('indice/') ? ruta.slice('indice/'.length) : `../${ruta}`)
+    .split('/')
+    .map(encodeURIComponent)
+    .join('/');
+
 const escapar = (t) => String(t).replace(/\|/g, '\\|');
 
 function resumenTemas(doc, limite = 150) {
@@ -141,11 +155,11 @@ function resumenTemas(doc, limite = 150) {
   return temas.length > limite ? `${temas.slice(0, limite - 1).trimEnd()}…` : temas;
 }
 
-function render(docs, rotos, sueltos) {
+function render(docs, rotos, sueltos, routers) {
   const fecha = new Date().toISOString().slice(0, 10);
   const out = [];
 
-  out.push('<!-- Generado por scripts/indexar.mjs. No editar a mano: los cambios se pierden. -->');
+  out.push('<!-- Generado por indice/scripts/indexar.mjs. No editar a mano: los cambios se pierden. -->');
   out.push('# Índice global del repositorio');
   out.push('');
   out.push(
@@ -153,7 +167,7 @@ function render(docs, rotos, sueltos) {
       'Sirve para decidir qué módulo cargar sin abrirlos todos. El enrutamiento con criterio está en [SKILL.md](SKILL.md).'
   );
   out.push('');
-  out.push(`**Generado:** ${fecha} · **Regenerar:** \`node scripts/indexar.mjs\``);
+  out.push(`**Generado:** ${fecha} · **Regenerar:** \`node indice/scripts/indexar.mjs\``);
   out.push('');
 
   // Resumen por dominio.
@@ -168,6 +182,21 @@ function render(docs, rotos, sueltos) {
     return porDominio.get(b).length - porDominio.get(a).length;
   });
 
+  out.push('## Skills invocables');
+  out.push('');
+  out.push(
+    'Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez desplegada dentro ' +
+      'del `.claude/skills/` del proyecto anfitrión. El nombre de la carpeta y el `name` de la ' +
+      'cabecera deben coincidir.'
+  );
+  out.push('');
+  out.push('| Skill | Enrutador |');
+  out.push('|---|---|');
+  for (const r of [...routers].sort((a, b) => a.meta.name.localeCompare(b.meta.name))) {
+    out.push(`| \`/${escapar(r.meta.name)}\` | [${escapar(r.ruta)}](${enlaceDesdeIndice(r.ruta)}) |`);
+  }
+  out.push('');
+
   out.push('## Resumen');
   out.push('');
   out.push('| Dominio | Documentos | Enrutador |');
@@ -176,7 +205,8 @@ function render(docs, rotos, sueltos) {
     const lista = porDominio.get(dom);
     const router = lista.find((d) => d.esRouter);
     out.push(
-      `| ${escapar(DOMINIOS[dom] ?? dom)} | ${lista.length} | ${router ? `[${router.ruta}](${router.ruta})` : '—'} |`
+      `| ${escapar(DOMINIOS[dom] ?? dom)} | ${lista.length} | ` +
+        `${router ? `[${router.ruta}](${enlaceDesdeIndice(router.ruta)})` : '—'} |`
     );
   }
   out.push('');
@@ -191,7 +221,7 @@ function render(docs, rotos, sueltos) {
     for (const doc of lista) {
       const nombre = dom === '.' ? doc.ruta : doc.ruta.slice(dom.length + 1);
       out.push(
-        `| [${escapar(nombre)}](${doc.ruta.split('/').map(encodeURIComponent).join('/')}) ` +
+        `| [${escapar(nombre)}](${enlaceDesdeIndice(doc.ruta)}) ` +
           `| ${escapar(doc.h1 ?? '—')} ` +
           `| ${escapar(doc.meta.tipo ?? (doc.esRouter ? 'enrutador' : doc.esReadme ? 'readme' : '—'))} ` +
           `| ${escapar(doc.meta.estabilidad ?? '—')} ` +
@@ -214,7 +244,7 @@ function render(docs, rotos, sueltos) {
     out.push('|---|---|---|');
     for (const doc of volatiles) {
       out.push(
-        `| [${escapar(doc.ruta)}](${doc.ruta}) | ${escapar(doc.meta.snapshot ?? '—')} ` +
+        `| [${escapar(doc.ruta)}](${enlaceDesdeIndice(doc.ruta)}) | ${escapar(doc.meta.snapshot ?? '—')} ` +
           `| ${escapar(doc.meta.consulta_externa ?? '—')} |`
       );
     }
@@ -237,22 +267,47 @@ function render(docs, rotos, sueltos) {
 
 const docs = listarMarkdown()
   .map(parsear)
-  .filter((d) => d.ruta !== 'INDICE.md');
+  .filter((d) => d.ruta !== SALIDA_RUTA);
+
+// Requisitos para que una carpeta sea una skill descubrible al desplegarse dentro de
+// `.claude/skills/`: SKILL.md de primer nivel, cabecera con `name` y `description`, y
+// nombre de carpeta igual al `name`.
+const routers = docs.filter((d) => d.esRouter);
+const invalidos = [];
+for (const d of routers) {
+  const carpeta = d.ruta.includes('/') ? d.ruta.slice(0, d.ruta.indexOf('/')) : '.';
+  if (!d.meta.name || !d.meta.description) {
+    invalidos.push(d);
+    console.error(`Enrutador sin name/description, no se descubrirá: ${d.ruta}`);
+  } else if (carpeta === '.') {
+    invalidos.push(d);
+    console.error(`SKILL.md en la raíz: quedaría en .claude/skills/SKILL.md y no se descubre.`);
+  } else if (carpeta !== d.meta.name) {
+    invalidos.push(d);
+    console.error(`Carpeta "${carpeta}" y name "${d.meta.name}" no coinciden: ${d.ruta}`);
+  } else if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(d.meta.name)) {
+    invalidos.push(d);
+    console.error(`Nombre de skill inválido "${d.meta.name}" (solo minúsculas, dígitos y guiones): ${d.ruta}`);
+  }
+}
+
+const validos = routers.filter((d) => !invalidos.includes(d));
 const rotos = enlacesRotos(docs);
 const sueltos = huerfanos(docs);
-const contenido = render(docs, rotos, sueltos);
+const contenido = render(docs, rotos, sueltos, validos);
 
 if (CHECK) {
   const actual = existsSync(SALIDA) ? readFileSync(SALIDA, 'utf8') : '';
   // La línea de fecha cambia cada día; no cuenta como desactualización.
   const normalizar = (t) => t.replace(/^\*\*Generado:\*\*.*$/m, '');
   const desfasado = normalizar(actual) !== normalizar(contenido);
-  if (desfasado) console.error('INDICE.md desactualizado: ejecuta `node scripts/indexar.mjs`.');
+  if (desfasado) console.error('INDICE.md desactualizado: ejecuta `node indice/scripts/indexar.mjs`.');
   for (const r of rotos) console.error(`Enlace roto: ${r.desde} -> ${r.hacia}`);
-  process.exit(desfasado || rotos.length > 0 ? 1 : 0);
+  process.exit(desfasado || rotos.length > 0 || invalidos.length > 0 ? 1 : 0);
 }
 
 writeFileSync(SALIDA, contenido, 'utf8');
 console.log(
-  `INDICE.md: ${docs.length} documentos · ${rotos.length} enlaces rotos · ${sueltos.length} módulos sin enlazar`
+  `INDICE.md: ${docs.length} documentos · ${validos.length} skills invocables · ` +
+    `${rotos.length} enlaces rotos · ${sueltos.length} módulos sin enlazar`
 );
