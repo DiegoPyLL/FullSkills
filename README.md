@@ -37,7 +37,7 @@ git submodule add https://github.com/DiegoPyLL/FullSkills.git .claude/skills
 Para traer los cambios más recientes del submódulo:
 
 ```
-git submodule update --remote --merge .claude/skills/fullskills
+git submodule update --remote --merge .claude/skills
 ```
 
 Al clonar el proyecto anfitrión por primera vez, o si el submódulo aparece vacío:
