@@ -26,6 +26,26 @@ proyecto-anfitrion/
 
 Condiciones para que una carpeta se descubra: `SKILL.md` en su primer nivel, cabecera con `name` y `description`, y nombre de carpeta idéntico al `name` (minúsculas, dígitos y guiones). Un `SKILL.md` en la raíz de este repositorio **no** se descubriría — por eso el índice vive en `indice/`.
 
+### Como submódulo
+
+Si el proyecto anfitrión agrega este repositorio como submódulo de Git en lugar de copiar el contenido:
+
+```
+git submodule add https://github.com/DiegoPyLL/FullSkills.git .claude/skills
+```
+
+Para traer los cambios más recientes del submódulo:
+
+```
+git submodule update --remote --merge .claude/skills/fullskills
+```
+
+Al clonar el proyecto anfitrión por primera vez, o si el submódulo aparece vacío:
+
+```
+git submodule update --init --recursive
+```
+
 ## Mantenimiento
 
 ```
