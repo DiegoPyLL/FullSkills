@@ -26,6 +26,7 @@ El contenido de este repositorio se despliega **suelto dentro del `.claude/skill
 | `/security` | [security/SKILL.md](../security/SKILL.md) | Seguridad ofensiva, defensiva, forense, IR |
 | `/backend` | [backend/SKILL.md](../backend/SKILL.md) | Diseño, datos, fiabilidad, rendimiento, entrega |
 | `/seo` | [seo/SKILL.md](../seo/SKILL.md) | Auditoría y diagnóstico de SEO técnico |
+| `/mobile` | [mobile/SKILL.md](../mobile/SKILL.md) | Seguridad del dispositivo iOS, diseño de app nativa, plataforma y entrega |
 
 Tres condiciones para que una carpeta se descubra como skill; `--check` las verifica:
 
@@ -52,6 +53,7 @@ Regla común a todos los skills: **nunca inventar** un identificador (CVE, ATT&C
 | Ciberseguridad | [security/SKILL.md](../security/SKILL.md) | Vulnerabilidades y CVEs, técnicas de ataque, detección e ingeniería de reglas, respuesta a incidentes, threat hunting, malware y ransomware, Active Directory, cloud, contenedores, red y perímetro, forense, CTI, pentesting, bug bounty, OT/ICS, IoT, hardware, privacidad, seguridad de IA y agentes |
 | Backend | [backend/SKILL.md](../backend/SKILL.md) | Diseño de APIs y contratos, modelado de datos y migraciones, concurrencia y colas, fiabilidad y modos de fallo, rendimiento y escalado, seguridad aplicada al desarrollo, observabilidad, arquitectura y límites de servicio, pruebas, entrega continua, calidad de código |
 | SEO técnico | [seo/SKILL.md](../seo/SKILL.md) | Auditoría técnica: indexabilidad, códigos de estado, rastreo, sitemaps, arquitectura de enlazado, rendimiento y Core Web Vitals, datos estructurados, internacionalización, migraciones |
+| Móvil | [mobile/SKILL.md](../mobile/SKILL.md) | Seguridad de la plataforma y del dispositivo iOS, spyware mercenario y cadenas sin interacción, endurecimiento por perfil de riesgo, forense ante sospecha de compromiso, revisión de la App Store y privacidad, ejecución en segundo plano, diseño de interfaz nativa y accesibilidad, trabajo sin conexión, rendimiento y entrega |
 | Ataques (anexo) | [attacks/reconnaissance_external.md](../attacks/reconnaissance_external.md) | Reconocimiento externo que no está en `security/attacks/discovery.md`. Anexo del catálogo de `security/`, no un dominio propio |
 
 **Carpetas reservadas, todavía sin contenido**: [ai/](../ai/README.md), [cloud/](../cloud/README.md), [frontend UX-UI/](../frontend%20UX-UI/README.md). Mientras estén vacías, enrutar así:
@@ -73,8 +75,11 @@ Cuando dos skills tocan el mismo tema, la diferencia es el **encuadre**, no el t
 | Telemetría y registros | [backend/observability/observability.md](../backend/observability/observability.md) | [security/detection/detection.md](../security/detection/detection.md) |
 | Despliegue y cadena de suministro | [backend/delivery/delivery.md](../backend/delivery/delivery.md) | [security/attacks/initial_access.md](../security/attacks/initial_access.md) |
 | Contenedores y orquestación | [backend/architecture/architecture.md](../backend/architecture/architecture.md) | [security/containers/containers.md](../security/containers/containers.md) · [security/kubernetes/kubernetes.md](../security/kubernetes/kubernetes.md) |
+| Móvil: dispositivo frente a app | [mobile/ios/ios.md](../mobile/ios/ios.md) — seguridad del dispositivo y del sistema | [security/mobile/mobile.md](../security/mobile/mobile.md) — seguridad de la app que se construye (MASVS) |
 | Caída en producción | [backend/reliability/reliability.md](../backend/reliability/reliability.md) | [security/playbooks/ir_base.md](../security/playbooks/ir_base.md) si hay sospecha de intrusión |
 | Rendimiento web | [backend/performance/performance.md](../backend/performance/performance.md) (servidor) | [seo/seo-master.md](../seo/seo-master.md) (Core Web Vitals y rastreo) |
+
+Excepción declarada en móvil: la regla anterior repartiría el forense de iOS a `security/`, pero `mobile/` es un dominio **de plataforma**, no de actividad, y se queda con todo lo del dispositivo — incluido responder a un compromiso. La frontera es el objeto, no el verbo: **el dispositivo y el sistema son de `mobile/`; la app que se construye es de `security/mobile/`**. Quien pregunta *"¿dónde guardo este token?"* va a `security/`; quien pregunta *"¿me pueden entrar en el teléfono?"*, a `mobile/`.
 
 Caso frecuente: *"¿es un incidente o es un bug?"*. Si hay indicio de actor (persistencia, credenciales usadas fuera de patrón, borrado de evidencia), se trata como incidente y manda `security/` — contener primero, entender después. Si no lo hay, manda `backend/`.
 

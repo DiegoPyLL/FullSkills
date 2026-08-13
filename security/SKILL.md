@@ -129,6 +129,7 @@ Un agente que solo lista CVEs falla. Estos cuatro modelos son lo que hay que apl
 |---|---|
 | Web: inyección, SSRF, deserialización, smuggling, supply chain de front | [web/web.md](web/web.md) |
 | Mobile: Android/iOS, MASVS | [mobile/mobile.md](mobile/mobile.md) |
+| Mobile: seguridad del **dispositivo** iOS, spyware, forense | [../mobile/SKILL.md](../mobile/SKILL.md) |
 | IA/LLM: prompt injection, RAG poisoning, model supply chain | [ai/ai.md](ai/ai.md) |
 | Agentes, tools, MCP, memoria, autonomía | [ai/agents_mcp.md](ai/agents_mcp.md) |
 

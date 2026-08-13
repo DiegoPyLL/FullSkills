@@ -8,6 +8,8 @@ estabilidad: permanente
 
 Android e iOS. Referencia de verificación: **OWASP MASVS** (requisitos) y **MASTG** (pruebas).
 
+Alcance: la seguridad de **la app que se construye**. La seguridad del **dispositivo y del sistema** —cadenas de exploits, spyware mercenario, endurecimiento, forense— vive en [../../mobile/SKILL.md](../../mobile/SKILL.md).
+
 ## Premisa
 
 El dispositivo del usuario es un entorno **no confiable**: puede estar rooteado, instrumentado o emulado. Toda decisión de seguridad debe tomarse en el servidor. Las protecciones del cliente (ofuscación, detección de root, anti-debug) elevan el coste del atacante; no son controles de seguridad y no deben sustituir a ninguno del servidor.
@@ -62,14 +64,13 @@ El dispositivo del usuario es un entorno **no confiable**: puede estar rooteado,
 
 | Riesgo | Plataforma | Control |
 |---|---|---|
-| Componentes exportados (Activities, Services, Broadcast Receivers, Content Providers) | Android | `exported=false` salvo necesidad; permisos propios; validar el llamante |
 | Deep links y esquemas personalizados sin validar | Ambas | Validar origen y parámetros; usar App Links / Universal Links verificados |
-| WebView insegura | Android | Deshabilitar JavaScript si no se necesita, no exponer interfaces nativas, validar la URL cargada |
-| Intent redirection | Android | Validar el destino antes de reenviar |
 | Pasteboard compartido | iOS | No copiar datos sensibles; usar pasteboard local |
 | Permisos excesivos | Ambas | Solo los necesarios, solicitados en contexto |
 | IPC inseguro | Ambas | Autenticar y validar toda comunicación entre apps |
 | Aplicaciones acompañantes o SDK de terceros | Ambas | Inventario de SDK; cada uno accede a lo que accede la app |
+
+El modelo de componentes de Android —componentes exportados, redirección de intents, WebView, configuración de seguridad de red— es específico de esa plataforma y vive en [../../mobile/android/android_platform.md](../../mobile/android/android_platform.md#superficie-que-expone-la-app).
 
 ### Autenticación
 
@@ -111,7 +112,7 @@ La mayoría de las brechas "de app móvil" son, en realidad, fallos de la API de
 
 | Amenaza | Descripción | Contramedida |
 |---|---|---|
-| Spyware comercial de grado estatal | Cadenas de exploits sin interacción; objetivo dirigido | Modo de bloqueo (Lockdown Mode) en iOS, actualizaciones inmediatas, reinicio periódico, perfil de riesgo |
+| Spyware comercial de grado estatal | Cadenas de exploits sin interacción; objetivo dirigido | Actualización inmediata, reinicio periódico y perfil de riesgo. El modo de bloqueo (Lockdown Mode) de iOS reduce superficie —bloquea la mayoría de tipos de adjunto, vistas previas de enlaces, llamadas de desconocidos, perfiles y accesorios por cable—, pero **no deshabilita iMessage ni FaceTime**. Ver [../../mobile/ios/ios.md](../../mobile/ios/ios.md) |
 | Smishing y phishing por mensajería | Vector masivo de acceso inicial | Formación, filtrado, MFA resistente a phishing |
 | Aplicaciones falsas y repackaging | Copia de la app con código añadido | Vigilancia de tiendas, atestación, verificación de firma |
 | Troyanos bancarios con servicios de accesibilidad | Superposición de pantallas y control remoto | Detección de superposición, atestación, educación del usuario |

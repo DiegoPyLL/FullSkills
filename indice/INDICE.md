@@ -1,9 +1,9 @@
 <!-- Generado por indice/scripts/indexar.mjs. No editar a mano: los cambios se pierden. -->
 # Índice global del repositorio
 
-Inventario completo de los 106 documentos del repositorio, con su tipo, su estabilidad y los temas que cubre cada uno. Sirve para decidir qué módulo cargar sin abrirlos todos. El enrutamiento con criterio está en [SKILL.md](SKILL.md).
+Inventario completo de los 117 documentos del repositorio, con su tipo, su estabilidad y los temas que cubre cada uno. Sirve para decidir qué módulo cargar sin abrirlos todos. El enrutamiento con criterio está en [SKILL.md](SKILL.md).
 
-**Generado:** 2026-07-30 · **Regenerar:** `node indice/scripts/indexar.mjs`
+**Generado:** 2026-08-13 · **Regenerar:** `node indice/scripts/indexar.mjs`
 
 ## Skills invocables
 
@@ -13,6 +13,7 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 |---|---|
 | `/backend` | [backend/SKILL.md](../backend/SKILL.md) |
 | `/indice` | [indice/SKILL.md](SKILL.md) |
+| `/mobile` | [mobile/SKILL.md](../mobile/SKILL.md) |
 | `/security` | [security/SKILL.md](../security/SKILL.md) |
 | `/seo` | [seo/SKILL.md](../seo/SKILL.md) |
 
@@ -23,6 +24,7 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | Raíz | 1 | — |
 | Ciberseguridad | 80 | [security/SKILL.md](../security/SKILL.md) |
 | Backend | 18 | [backend/SKILL.md](../backend/SKILL.md) |
+| Móvil | 11 | [mobile/SKILL.md](../mobile/SKILL.md) |
 | SEO | 2 | [seo/SKILL.md](../seo/SKILL.md) |
 | IA | 1 | — |
 | Ataques (fuera de security/) | 1 | — |
@@ -34,7 +36,7 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 
 | Documento | Título | Tipo | Estabilidad | Temas |
 |---|---|---|---|---|
-| [README.md](../README.md) | FullSkills | readme | — | Despliegue · Mantenimiento · Convenciones |
+| [README.md](../README.md) | FullSkills | readme | — | Tabla de contenidos · Qué es esto · Inicio rápido · Dominios · Índice de skills · Convenciones · Mantenimiento · Roadmap · Contribuir |
 
 ## Ciberseguridad
 
@@ -144,6 +146,22 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | [SKILL.md](../backend/SKILL.md) | Skill de Backend — índice y protocolo | enrutador | — | 1. Alcance: agnóstico de tecnología · 2. Protocolo de respuesta · 3. Núcleo de razonamiento · 4. Mapa de enrutamiento · 5. Convenciones de los módulo… |
 | [testing/testing.md](../backend/testing/testing.md) | Pruebas | modelo | permanente | Qué confianza compra cada nivel · Determinismo · Dobles frente a dependencia real · Contratos, datos de prueba e invariantes · Más allá de lo funcion… |
 
+## Móvil
+
+| Documento | Título | Tipo | Estabilidad | Temas |
+|---|---|---|---|---|
+| [android/android_exploits.md](../mobile/android/android_exploits.md) | Campañas y vulnerabilidades explotadas en Android | catalogo | volatil | Cómo leer esta tabla · Lo que no se corrige en el dispositivo · Cronología · Identificadores que circulan mal atribuidos |
+| [android/android_forensics.md](../mobile/android/android_forensics.md) | Playbook — sospecha de compromiso de un Android | playbook | permanente | Premisa · Disparadores · Preservación — antes de tocar nada · Recolección · Artefactos de alto valor · Herramientas · Interpretación · Contención y r… |
+| [android/android.md](../mobile/android/android.md) | Seguridad de la plataforma Android | modelo | permanente | Premisa · Modelo de amenaza por perfil · Superficie de ataque · La cadena de parcheo · Anatomía de una cadena · Arquitectura de mitigación · Vectores… |
+| [ios/ios_design.md](../mobile/ios/ios_design.md) | Diseño de interfaz en iOS | modelo | permanente | Premisa · Por qué no se copia el diseño de Android · Patrones de navegación · Interacción táctil · Estados · Accesibilidad · Adaptación |
+| [ios/ios_exploits.md](../mobile/ios/ios_exploits.md) | Campañas y vulnerabilidades explotadas en iOS | catalogo | volatil | Cómo leer esta tabla · Vulnerabilidad de hardware no parcheable · Cronología · Identificadores que circulan mal atribuidos · Correcciones verificadas… |
+| [ios/ios_forensics.md](../mobile/ios/ios_forensics.md) | Playbook — sospecha de compromiso de un iPhone | playbook | permanente | Premisa · Disparadores · Preservación — antes de tocar nada · Recolección · Artefactos de alto valor · Herramientas · Interpretación · Contención y r… |
+| [ios/ios_platform.md](../mobile/ios/ios_platform.md) | Restricciones de plataforma en iOS | referencia | volatil | Premisa · Revisión de la App Store · Privacidad y permisos · Ejecución en segundo plano · Ciclo de versiones y soporte · Distribución alternativa en… |
+| [ios/ios.md](../mobile/ios/ios.md) | Seguridad de la plataforma iOS | modelo | permanente | Premisa · Modelo de amenaza por perfil · Superficie de ataque · Anatomía de una cadena · Arquitectura de mitigación · Vectores · Endurecimiento por p… |
+| [practices/practices.md](../mobile/practices/practices.md) | Buenas prácticas de construcción y entrega móvil | modelo | permanente | La diferencia estructural con el backend · Contrato con el servidor · Red y trabajo sin conexión · Rendimiento y energía · Datos locales · Observabil… |
+| [SKILL.md](../mobile/SKILL.md) | Skill de Móvil — índice y protocolo | enrutador | — | 1. Alcance: el dispositivo y el producto, no la app por dentro · 2. Protocolo de respuesta · 3. Núcleo de razonamiento · 4. Mapa de enrutamiento · 5.… |
+| [trends/trends.md](../mobile/trends/trends.md) | Tendencias de plataforma móvil | referencia | volatil | Cómo se usa este módulo · Direcciones estables · Decisiones que reaparecen · Límite |
+
 ## SEO
 
 | Documento | Título | Tipo | Estabilidad | Temas |
@@ -187,6 +205,10 @@ Estos módulos caducan. Verificar en la fuente antes de afirmar nada operativo.
 
 | Módulo | Snapshot | Fuente de verificación |
 |---|---|---|
+| [mobile/android/android_exploits.md](../mobile/android/android_exploits.md) | 2026-08 | https://source.android.com/docs/security/bulletin |
+| [mobile/ios/ios_exploits.md](../mobile/ios/ios_exploits.md) | 2026-08 | https://support.apple.com/en-us/100100 |
+| [mobile/ios/ios_platform.md](../mobile/ios/ios_platform.md) | 2026-08 | https://developer.apple.com/app-store/review/guidelines/ |
+| [mobile/trends/trends.md](../mobile/trends/trends.md) | 2026-08 | Notas de versión y documentación del fabricante de cada plataforma · https://developer.apple.com/documentation/ · https://developer.android.com/ |
 | [security/cisa_kev.md](../security/cisa_kev.md) | 2026-07 | KEV: https://www.cisa.gov/known-exploited-vulnerabilities-catalog (JSON/CSV actualizado varias veces por semana) · EPSS: https://api.first.org/data/v1/epss (recalculado a diario) · NVD: https://services.nvd.nist.gov/rest/json/cves/2.0 |
 | [security/cve_database.md](../security/cve_database.md) | 2026-07 | NVD https://nvd.nist.gov · KEV https://www.cisa.gov/known-exploited-vulnerabilities-catalog · EPSS https://api.first.org/data/v1/epss · Aviso del fabricante (fuente autoritativa de versiones) |
 | [security/references/references.md](../security/references/references.md) | — | Las URL y los nombres de producto cambian; verificar antes de citar en un entregable |

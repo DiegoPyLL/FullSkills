@@ -30,6 +30,7 @@ const DOMINIOS = {
   security: 'Ciberseguridad',
   backend: 'Backend',
   seo: 'SEO',
+  mobile: 'Móvil',
   attacks: 'Ataques (fuera de security/)',
   ai: 'IA',
   cloud: 'Cloud',
