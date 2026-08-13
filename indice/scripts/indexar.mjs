@@ -29,6 +29,7 @@ const DOMINIOS = {
   indice: 'Índice',
   security: 'Ciberseguridad',
   backend: 'Backend',
+  mobile: 'Móvil',
   seo: 'SEO',
   mobile: 'Móvil',
   attacks: 'Ataques (fuera de security/)',

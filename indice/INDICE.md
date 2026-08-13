@@ -1,7 +1,7 @@
 <!-- Generado por indice/scripts/indexar.mjs. No editar a mano: los cambios se pierden. -->
 # Índice global del repositorio
 
-Inventario completo de los 117 documentos del repositorio, con su tipo, su estabilidad y los temas que cubre cada uno. Sirve para decidir qué módulo cargar sin abrirlos todos. El enrutamiento con criterio está en [SKILL.md](SKILL.md).
+Inventario completo de los 119 documentos del repositorio, con su tipo, su estabilidad y los temas que cubre cada uno. Sirve para decidir qué módulo cargar sin abrirlos todos. El enrutamiento con criterio está en [SKILL.md](SKILL.md).
 
 **Generado:** 2026-08-13 · **Regenerar:** `node indice/scripts/indexar.mjs`
 
@@ -24,7 +24,7 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | Raíz | 1 | — |
 | Ciberseguridad | 80 | [security/SKILL.md](../security/SKILL.md) |
 | Backend | 18 | [backend/SKILL.md](../backend/SKILL.md) |
-| Móvil | 11 | [mobile/SKILL.md](../mobile/SKILL.md) |
+| Móvil | 13 | [mobile/SKILL.md](../mobile/SKILL.md) |
 | SEO | 2 | [seo/SKILL.md](../seo/SKILL.md) |
 | IA | 1 | — |
 | Ataques (fuera de security/) | 1 | — |
@@ -150,8 +150,10 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 
 | Documento | Título | Tipo | Estabilidad | Temas |
 |---|---|---|---|---|
+| [android/android_design.md](../mobile/android/android_design.md) | Diseño de interfaz en Android | modelo | permanente | Premisa · Por qué no se copia el diseño de iOS · El retroceso es un contrato, no un botón · Patrones de navegación · Interacción táctil · Cambios de… |
 | [android/android_exploits.md](../mobile/android/android_exploits.md) | Campañas y vulnerabilidades explotadas en Android | catalogo | volatil | Cómo leer esta tabla · Lo que no se corrige en el dispositivo · Cronología · Identificadores que circulan mal atribuidos |
 | [android/android_forensics.md](../mobile/android/android_forensics.md) | Playbook — sospecha de compromiso de un Android | playbook | permanente | Premisa · Disparadores · Preservación — antes de tocar nada · Recolección · Artefactos de alto valor · Herramientas · Interpretación · Contención y r… |
+| [android/android_platform.md](../mobile/android/android_platform.md) | Restricciones de plataforma en Android | referencia | volatil | Premisa · El nivel de API objetivo: la puerta que caduca · Revisión de Google Play · Permisos y privacidad · Ejecución en segundo plano · Ciclo de ve… |
 | [android/android.md](../mobile/android/android.md) | Seguridad de la plataforma Android | modelo | permanente | Premisa · Modelo de amenaza por perfil · Superficie de ataque · La cadena de parcheo · Anatomía de una cadena · Arquitectura de mitigación · Vectores… |
 | [ios/ios_design.md](../mobile/ios/ios_design.md) | Diseño de interfaz en iOS | modelo | permanente | Premisa · Por qué no se copia el diseño de Android · Patrones de navegación · Interacción táctil · Estados · Accesibilidad · Adaptación |
 | [ios/ios_exploits.md](../mobile/ios/ios_exploits.md) | Campañas y vulnerabilidades explotadas en iOS | catalogo | volatil | Cómo leer esta tabla · Vulnerabilidad de hardware no parcheable · Cronología · Identificadores que circulan mal atribuidos · Correcciones verificadas… |
@@ -206,6 +208,7 @@ Estos módulos caducan. Verificar en la fuente antes de afirmar nada operativo.
 | Módulo | Snapshot | Fuente de verificación |
 |---|---|---|
 | [mobile/android/android_exploits.md](../mobile/android/android_exploits.md) | 2026-08 | https://source.android.com/docs/security/bulletin |
+| [mobile/android/android_platform.md](../mobile/android/android_platform.md) | 2026-08 | https://support.google.com/googleplay/android-developer |
 | [mobile/ios/ios_exploits.md](../mobile/ios/ios_exploits.md) | 2026-08 | https://support.apple.com/en-us/100100 |
 | [mobile/ios/ios_platform.md](../mobile/ios/ios_platform.md) | 2026-08 | https://developer.apple.com/app-store/review/guidelines/ |
 | [mobile/trends/trends.md](../mobile/trends/trends.md) | 2026-08 | Notas de versión y documentación del fabricante de cada plataforma · https://developer.apple.com/documentation/ · https://developer.android.com/ |
@@ -215,10 +218,9 @@ Estos módulos caducan. Verificar en la fuente antes de afirmar nada operativo.
 
 ## Salud
 
-- Enlaces internos rotos: **5**
+- Enlaces internos rotos: **4**
   - `attacks/reconnaissance_external.md` → `discovery.md`
   - `security/blockchain/blockchain.md` → `../attacks/network.md`
-  - `security/hardware/hardware.md` → `../attacks/physical.md`
   - `security/SKILL.md` → `art/art.md`
   - `security/tls/tls.md` → `../attacks/network.md`
 - Módulos que ningún documento enlaza: **1**

@@ -18,12 +18,12 @@ Superficie de ataque física y electromagnética de componentes de hardware. Dif
 | **UART/Console** | Puerto de consola serial sin autenticación | Acceso root al sistema | Autenticación en consola, deshabilitar cuando no se necesite |
 | **DMA (Direct Memory Access)** | Periféricos PCIe/Thunderbolt acceden directamente a la memoria | Escalada a kernel, robo de credenciales, DMA strike | IOMMU (VT-d/AMD-Vi) habilitado, Thunderbolt security mode |
 | **Side-channel (timing, power, EM)** | Medir tiempo de ejecución, consumo energético o emisión EM | Extracción de claves criptográficas, datos sensibles | Randomización de tiempo, masking de operaciones sensibles |
-| **Rowhammer** | Fibrar celdas de DRAM adyacentes alterando bits | Escalada de privilegios, escape de contenedores | ECC memory, refresh rates aumentados, EDRAM |
+| **Rowhammer** | Voltear bits en celdas de DRAM adyacentes por escritura repetida | Escalada de privilegios, escape de contenedores | ECC memory, refresh rates aumentados, EDRAM |
 | **Spectre/Meltdown** | Explotación de execution speculation en CPUs | Lectura de memoria arbitraria, incluso de kernel | Patches del kernel (retpoline, KAISER); mitigaciones parciales |
 | **BadUSB / firmware de periféricos** | Firmware malicioso en teclado, mouse, webcam | Keylogging, inyección de comandos | Allow-list de dispositivos, firmware verificable, bloquear USB no autorizado |
 | **Hardware implant** | Implante físico en la ruta de datos o alimentación | Interceptación de tráfico, extracción de datos | Inspección física de hardware, inventario de componentes |
 | **Voltage/clock glitching** | Alterar alimentación o reloj del chip | Bypass de seguridad, desbordamiento de buffers | Detección de anomalías de voltaje/reloj, guardas de hardware |
-| **Fault injection** | Pulsos láser, RF o de voltaje para inducir errores | Bypass de PIN, extracción de claves | Detección de falto de voltaje, sensores de temperatura |
+| **Fault injection** | Pulsos láser, RF o de voltaje para inducir errores | Bypass de PIN, extracción de claves | Detección de caídas de voltaje, sensores de temperatura |
 | **Chip-off / decapping** | Deslaminar el die para lectura directa | Extracción de claves, modificación de fusibles | Detección de manipulación física, encapsulado anti-tampering |
 
 ## Seguridad de arranque
@@ -42,27 +42,22 @@ Superficie de ataque física y electromagnética de componentes de hardware. Dif
 
 ## Vulnerabilidades de hardware conocidas
 
+Solo entran entradas verificables contra el aviso del fabricante o NVD. La columna de año es la de **divulgación pública**, que no coincide con el año del identificador CVE: Downfall se comunicó a Intel en 2022, tiene CVE de 2022 y se hizo pública en 2023. Fechar por el número del CVE produce cronologías falsas.
+
 | Vulnerabilidad | Año | Vector | Impacto | Mitigación |
 |---|---|---|---|---|
-| **Spectre (v1-v4)** | 2018 | Speculative execution | Lectura de memoria arbitraria | Patches de kernel, recompilar con retpoline |
-| **Meltdown** | 2018 | Speculative execution + privilege elevation | Lectura de kernel memory desde user-space | Patches de kernel (KAISER/KPTI) |
-| **Foreshadow** | 2018 | SGX speculative execution | Lectura de datos en enclaves SGX | Microcódigo de Intel, kernel patches |
-| **L1TF (Fallout)** | 2018 | L1 cache timing | Lectura de memoria de VMs vecinas (hypervisor escape) | Patches de kernel, desactivar hyperthreading |
-| **MDS (Microarchitectural Data Sampling)** | 2019 | Cache, store buffer, load port sampling | Fuga de datos entre procesos/VMs | Microcódigo, kernel patches, flush buffers |
-| **Foreshadow-NG** | 2019 | SGX + VMX speculative execution | Multi-vecino escape de enclave | Microcódigo, kernel patches |
-| **ZombieLoad** | 2020 | MTS (Microarchitectural Fill Buffer Sampling) | Fuga de datos entre procesos | Microcódigo, kernel patches |
-| **Rogue Data Cache Load (RDCL)** | 2020 | Cache line fill | Fuga de datos en cache | Microcódigo |
-| **GooseEgg** | 2020 | Spectre v1 variant en GPU | Lectura de GPU memory | Patches de GPU firmware |
-| **Hertzbleed** | 2021 | Side-channel de frecuencia de reloj en CPUs ARM/x86 | Extracción de claves criptográficas | Frecuencia de reloj fija para operaciones sensibles |
-| **CacheOut** | 2022 | MTS via cross-socket communication | Fuga de datos entre sockets CPU | Microcódigo, kernel patches |
-| **Downfall** | 2022 | SGX speculative execution (variant) | Lectura de datos en enclaves SGX | Microcódigo, kernel patches |
-| **Detect** | 2022 | Speculative store bypass en CPUs AMD/Intel | Escritura de datos en buffer especulativo | Microcódigo |
-| **Zerolog** | 2022 | Variant de Spectre en GPUs Intel | Lectura de GPU memory | Patches de driver de GPU |
-| **RSLpS (Return Stack Leak privilege escalation)** | 2023 | Predictive execution de return stack | Escalada de privilegios | Patches de microcódigo |
-| **BranchScope** | 2023 | Spectre variant en branch prediction | Fuga de datos mediante predicción de ramas | Microcódigo, kernel patches |
-| **Vexilla** | 2023 | Speculative execution + microcode | Fuga de datos via microcode | Microcode updates |
-| **Struktur** | 2024 | Side-channel en TLB + prefetching | Lectura de datos en cache | Patches de kernel |
-| **ZombieReload** | 2024 | Variant de MTS en CPUs AMD | Fuga de datos en microarquitectura | Microcódigo, kernel patches |
+| **Spectre** (v1 CVE-2017-5753, v2 CVE-2017-5715) | 2018 | Ejecución especulativa con predicción de saltos | Lectura de memoria de otro contexto | Parches de kernel, recompilar con retpoline, microcódigo |
+| **Meltdown** (CVE-2017-5754) | 2018 | Ejecución especulativa que salta la comprobación de privilegio | Lectura de memoria de kernel desde espacio de usuario | Aislamiento de tablas de página (KPTI) |
+| **Foreshadow / L1TF** (CVE-2018-3615, 3620, 3646) | 2018 | Fallo terminal de la caché L1 | Lectura de enclaves SGX, de otras máquinas virtuales y del hipervisor | Microcódigo, parches de kernel, desactivar multihilo simultáneo |
+| **MDS** — Fallout, RIDL y ZombieLoad (CVE-2018-12126, 12127, 12130) | 2019 | Muestreo de búferes internos: almacenamiento, relleno y puertos de carga | Fuga de datos entre procesos y entre máquinas virtuales | Microcódigo con vaciado de búferes, parches de kernel |
+| **CacheOut / L1DES** (CVE-2020-0549) | 2020 | Evacuación de la caché L1D | Fuga dirigida de datos, incluidos enclaves | Microcódigo, parches de kernel |
+| **Hertzbleed** | 2022 | Canal lateral por escalado dinámico de frecuencia | Extracción de claves criptográficas, incluso en remoto | Implementación de tiempo constante en las rutas criptográficas |
+| **Downfall / GDS** (CVE-2022-40982) | 2023 | Muestreo de datos en la instrucción `gather` de AVX2 y AVX-512 | Lectura de datos de otros procesos en el mismo núcleo | Microcódigo de Intel |
+| **Rowhammer** | 2014, con variantes desde entonces | Escritura repetida en filas de DRAM que voltea bits en las contiguas | Escalada de privilegios, escape de contenedor | Memoria con ECC, refresco más frecuente, mitigaciones del controlador |
+| **checkm8** (CVE-2019-8900) | 2019 | ROM de arranque de SoC de Apple, de A5 a A11, por USB en modo DFU | Compromiso permanente de la cadena de arranque | **Ninguna**: la ROM es de solo lectura. Ver [../../mobile/ios/ios_exploits.md](../../mobile/ios/ios_exploits.md) |
+
+Dos lecturas. **Primera:** las mitigaciones de ejecución especulativa cuestan rendimiento, y por eso acaban desactivadas en entornos donde nadie ha medido el riesgo. **Segunda:** casi todas exigen ejecución local previa, así que el impacto real depende de si la máquina es multiinquilino. Un servidor dedicado y un nodo compartido de nube no tienen el mismo problema.
+
 
 ## Ataques a infraestructura física
 
@@ -140,21 +135,12 @@ Superficie de ataque física y electromagnética de componentes de hardware. Dif
 
 | Fuente | Uso |
 |---|---|
-| [cve_database.md](../cve_database.md) | CVEs de vulnerabilidades de hardware |
-| [cisa_kev.md](../cisa_kev.md) | CVEs de hardware en explotación activa |
-| [hardening/hardening.md](../hardening/hardening.md) | Hardening de hardware y dispositivos |
-| [attacks/physical.md](../attacks/physical.md) | Tácticas de ataque físico (ATT&CK) |
-| [iot/iot.md](../iot/iot.md) | Seguridad de dispositivos IoT/embebidos |
+| [cve_database.md](../cve_database.md) | Esquema de ficha y arquetipos de vulnerabilidad |
+| [cisa_kev.md](../cisa_kev.md) | Vulnerabilidades de hardware en explotación activa |
+| [cwe.md](../cwe.md) | Causa raíz y taxonomía de debilidades |
+| [hardening/hardening.md](../hardening/hardening.md) | Endurecimiento de hardware y dispositivos |
+| [iot/iot.md](../iot/iot.md) | Seguridad de dispositivos IoT y embebidos |
 | [mitre_attack.md](../mitre_attack.md) | Tácticas de ataque físico y de infraestructura |
-| CWE-613 | Weakness: Insufficient session uniqueness |
-| CWE-614 | Weakness: Sensitive cookie without 'Secure' attribute |
-| CWE-16 | Weakness: Configuration |
-| CWE-250 | Weakness: Ownership error |
-| CWE-251 | Weakness: Not enforcing write-minimum |
-| CWE-252 | Weakness: Unchecked return for write |
-| CWE-253 | Weakness: Incorrect check of exception type |
-| CWE-254 | Weakness: Security features not implemented |
-| CWE-255 | Weakness: Function calls with unexpectedly different values |
-| CWE-256 | Weakness: Unprotected credential data |
-| CWE-257 | Weakness: Storing passwords in reversible form |
-| CWE-258 | Weakness |
+| [../../mobile/ios/ios.md](../../mobile/ios/ios.md) · [../../mobile/android/android.md](../../mobile/android/android.md) | Cómo se materializan estos vectores en un teléfono: TEE, arranque verificado, banda base |
+
+Las debilidades concretas (CWE) no se enumeran aquí: la taxonomía vive en [cwe.md](../cwe.md) y duplicarla solo genera divergencia.
