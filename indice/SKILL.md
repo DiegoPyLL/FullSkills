@@ -34,7 +34,7 @@ Tres condiciones para que una carpeta se descubra como skill; `--check` las veri
 2. Cabecera con `name` y `description`. La descripción es lo único que decide la invocación automática: debe nombrar temas concretos y decir *cuándo* se usa.
 3. **Nombre de carpeta igual al `name`**, en minúsculas, dígitos y guiones.
 
-No hay skill para `ai/`, `cloud/` ni `frontend UX-UI/`: están vacías y una skill sin contenido solo invita a inventar. Cuando tengan enrutador, `frontend UX-UI/` habrá que renombrarla — el espacio y las mayúsculas no son un nombre de skill válido.
+No hay skill para `ai/`, `cloud/` ni `frontend-ux-ui/`: están vacías y una skill sin contenido solo invita a inventar. Las tres ya llevan un nombre de carpeta válido, así que solo les falta `SKILL.md` con `name` idéntico cuando tengan contenido.
 
 ## 1. Protocolo de enrutamiento
 
@@ -54,9 +54,8 @@ Regla común a todos los skills: **nunca inventar** un identificador (CVE, ATT&C
 | Backend | [backend/SKILL.md](../backend/SKILL.md) | Diseño de APIs y contratos, modelado de datos y migraciones, concurrencia y colas, fiabilidad y modos de fallo, rendimiento y escalado, seguridad aplicada al desarrollo, observabilidad, arquitectura y límites de servicio, pruebas, entrega continua, calidad de código |
 | SEO técnico | [seo/SKILL.md](../seo/SKILL.md) | Auditoría técnica: indexabilidad, códigos de estado, rastreo, sitemaps, arquitectura de enlazado, rendimiento y Core Web Vitals, datos estructurados, internacionalización, migraciones |
 | Móvil | [mobile/SKILL.md](../mobile/SKILL.md) | Seguridad de la plataforma y del dispositivo, en iOS y en Android: spyware mercenario y cadenas sin interacción, cadena de parcheo y nivel de parche real, endurecimiento por perfil de riesgo, forense ante sospecha de compromiso. Y producto: revisión de App Store y de Google Play, nivel de API objetivo, permisos y privacidad, ejecución en segundo plano, diseño de interfaz nativa y accesibilidad, trabajo sin conexión, rendimiento y entrega |
-| Ataques (anexo) | [attacks/reconnaissance_external.md](../attacks/reconnaissance_external.md) | Reconocimiento externo que no está en `security/attacks/discovery.md`. Anexo del catálogo de `security/`, no un dominio propio |
 
-**Carpetas reservadas, todavía sin contenido**: [ai/](../ai/README.md), [cloud/](../cloud/README.md), [frontend UX-UI/](../frontend%20UX-UI/README.md). Mientras estén vacías, enrutar así:
+**Carpetas reservadas, todavía sin contenido**: [ai/](../ai/README.md), [cloud/](../cloud/README.md), [frontend-ux-ui/](../frontend-ux-ui/README.md). Mientras estén vacías, enrutar así:
 
 - IA/LLM/agentes → [security/ai/ai.md](../security/ai/ai.md) y [security/ai/agents_mcp.md](../security/ai/agents_mcp.md) (encuadre de seguridad; no hay material de construcción de sistemas de IA).
 - Cloud → [security/cloud/cloud.md](../security/cloud/cloud.md) más el módulo del proveedor ([aws](../security/aws/aws.md), [azure](../security/azure/azure.md), [gcp](../security/gcp/gcp.md)); la arquitectura cloud no de seguridad no está cubierta.

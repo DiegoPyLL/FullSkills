@@ -28,7 +28,7 @@
 
 La diferencia con un simple montón de notas: los `SKILL.md` no repiten conocimiento, lo **orquestan**. Clasifican la intención de la pregunta, deciden qué módulo abrir, imponen un protocolo de respuesta y obligan a cerrar con acción concreta (una detección, una mitigación, un umbral medible) en lugar de terminar en «depende». Las skills se cargan bajo demanda según el disparador de la conversación, así que no pagas contexto por las que no usas.
 
-**Úsalo para:** diagnosticar y diseñar en seguridad y backend, auditar SEO técnico, analizar un CVE o una técnica de ataque, endurecer un iPhone o responder a una sospecha de spyware, revisar un diseño de API o una migración de datos, y localizar rápido dónde vive un tema entre los 119 documentos del repositorio.
+**Úsalo para:** diagnosticar y diseñar en seguridad y backend, auditar SEO técnico, analizar un CVE o una técnica de ataque, endurecer un iPhone o responder a una sospecha de spyware, revisar un diseño de API o una migración de datos, y localizar rápido dónde vive un tema entre los 121 documentos del repositorio.
 
 ---
 
@@ -78,12 +78,12 @@ Tres condiciones para que una carpeta se descubra como skill (las verifica `--ch
 | Skill | Documentos | Enfoque |
 |---|---:|---|
 | [`/indice`](#indice--enrutador-maestro) | 1 + INDICE | Enrutador maestro entre skills e inventario generado del repositorio |
-| [`/security`](#security--ciberseguridad) | 80 | Seguridad ofensiva, defensiva, forense, IR, cloud, contenedores, IA — 41 dominios |
+| [`/security`](#security--ciberseguridad) | 83 | Seguridad ofensiva, defensiva, forense, IR, cloud, contenedores, IA — 42 dominios |
 | [`/backend`](#backend--ingeniería-de-backend) | 18 | APIs, datos, concurrencia, fiabilidad, rendimiento, appsec, observabilidad, entrega — 11 dominios |
 | [`/seo`](#seo--seo-técnico) | 2 | Auditoría de SEO técnico — manual de ejecución de 25 secciones + 4 anexos |
 | [`/mobile`](#mobile--plataforma-móvil) | 13 | Seguridad del dispositivo iOS y Android, diseño de app nativa, plataforma y entrega — 4 dominios |
 
-`ai/`, `cloud/` y `frontend UX-UI/` están **reservadas y todavía vacías**: sin `SKILL.md` no se descubren como skill. Ver [Roadmap](#roadmap).
+`ai/`, `cloud/` y `frontend-ux-ui/` están **reservadas y todavía vacías**: sin `SKILL.md` no se descubren como skill. Ver [Roadmap](#roadmap).
 
 ---
 
@@ -96,17 +96,17 @@ Tres condiciones para que una carpeta se descubra como skill (las verifica `--ch
 | Pieza | Qué es |
 |---|---|
 | [`SKILL.md`](indice/SKILL.md) | Enrutador **entre skills**: clasifica el dominio, resuelve cruces (qué dominio es dueño y cuál se consulta) y no contiene conocimiento propio. Se invoca cuando no está claro qué skill aplica o la pregunta cruza dominios. |
-| [`INDICE.md`](indice/INDICE.md) | Inventario **generado** de los 119 documentos: título, tipo, estabilidad y temas de cada uno, más una sección de salud con enlaces rotos y módulos huérfanos. No se edita a mano. |
+| [`INDICE.md`](indice/INDICE.md) | Inventario **generado** de los 121 documentos: título, tipo, estabilidad y temas de cada uno, más una sección de salud con enlaces rotos y módulos huérfanos. No se edita a mano. |
 
 ### /security — ciberseguridad
 
-`security/` — [`SKILL.md`](security/SKILL.md) · 80 documentos en 41 dominios
+`security/` — [`SKILL.md`](security/SKILL.md) · 83 documentos en 42 dominios
 
 Enrutador con seis modos de respuesta (`ANALIZAR_VULN`, `EXPLICAR_TECNICA`, `RESPONDER_INCIDENTE`, `CAZAR`, `DISEÑAR_DEFENSA`, `EVALUAR_RIESGO`) y la **regla de oro permanente vs. volátil**: los CVEs, scores y atribuciones se tratan como snapshots fechados que hay que verificar en la fuente; nunca se inventa un identificador.
 
 | Área | Docs | Dominios |
 |---|---:|---|
-| Ofensiva | 16 | [`attacks/`](security/attacks/), [`pentesting/`](security/pentesting/), [`bug_bounty/`](security/bug_bounty/), [`web/`](security/web/), [`mobile/`](security/mobile/), [`references/`](security/references/) |
+| Ofensiva | 19 | [`attacks/`](security/attacks/), [`pentesting/`](security/pentesting/), [`art/`](security/art/), [`bug_bounty/`](security/bug_bounty/), [`web/`](security/web/), [`mobile/`](security/mobile/), [`references/`](security/references/) |
 | Identidad e infra | 4 | [`active_directory/`](security/active_directory/), [`windows/`](security/windows/), [`linux/`](security/linux/), [`hardening/`](security/hardening/) |
 | Cloud y contenedores | 9 | [`aws/`](security/aws/), [`azure/`](security/azure/), [`gcp/`](security/gcp/), [`cloud/`](security/cloud/), [`kubernetes/`](security/kubernetes/), [`docker/`](security/docker/), [`containers/`](security/containers/), [`vmware/`](security/vmware/), [`hyperv/`](security/hyperv/) |
 | Defensa y detección | 7 | [`detection/`](security/detection/), [`hunting/`](security/hunting/), [`sigma/`](security/sigma/), [`yara/`](security/yara/), [`snort/`](security/snort/), [`suricata/`](security/suricata/), [`firewalls/`](security/firewalls/) |
@@ -187,7 +187,7 @@ Carpetas reservadas, aún sin `SKILL.md`, a la espera de enrutador y módulos:
 |---|---|---|
 | `ai/` | Ingeniería de IA / LLMs / agentes | Reservada |
 | `cloud/` | Arquitectura e ingeniería cloud (más allá de la seguridad cloud ya cubierta en `/security`) | Reservada |
-| `frontend UX-UI/` | Frontend y UX/UI | Reservada — habrá que **renombrarla**: el espacio y las mayúsculas no son un nombre de skill válido |
+| `frontend-ux-ui/` | Frontend y UX/UI | Reservada |
 
 ---
 

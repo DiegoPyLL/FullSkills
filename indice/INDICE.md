@@ -1,9 +1,9 @@
 <!-- Generado por indice/scripts/indexar.mjs. No editar a mano: los cambios se pierden. -->
 # Índice global del repositorio
 
-Inventario completo de los 119 documentos del repositorio, con su tipo, su estabilidad y los temas que cubre cada uno. Sirve para decidir qué módulo cargar sin abrirlos todos. El enrutamiento con criterio está en [SKILL.md](SKILL.md).
+Inventario completo de los 121 documentos del repositorio, con su tipo, su estabilidad y los temas que cubre cada uno. Sirve para decidir qué módulo cargar sin abrirlos todos. El enrutamiento con criterio está en [SKILL.md](SKILL.md).
 
-**Generado:** 2026-08-13 · **Regenerar:** `node indice/scripts/indexar.mjs`
+**Generado:** 2026-08-15 · **Regenerar:** `node indice/scripts/indexar.mjs`
 
 ## Skills invocables
 
@@ -22,12 +22,11 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | Dominio | Documentos | Enrutador |
 |---|---|---|
 | Raíz | 1 | — |
-| Ciberseguridad | 80 | [security/SKILL.md](../security/SKILL.md) |
+| Ciberseguridad | 83 | [security/SKILL.md](../security/SKILL.md) |
 | Backend | 18 | [backend/SKILL.md](../backend/SKILL.md) |
 | Móvil | 13 | [mobile/SKILL.md](../mobile/SKILL.md) |
 | SEO | 2 | [seo/SKILL.md](../seo/SKILL.md) |
 | IA | 1 | — |
-| Ataques (fuera de security/) | 1 | — |
 | Cloud | 1 | — |
 | Frontend UX-UI | 1 | — |
 | Índice | 1 | [indice/SKILL.md](SKILL.md) |
@@ -45,6 +44,7 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | [active_directory/active_directory.md](../security/active_directory/active_directory.md) | Active Directory | modelo | permanente | Kerberos: lo mínimo para razonar · Rutas de escalada de dominio · AD CS — la superficie más subestimada · Configuración de referencia · Detecciones p… |
 | [ai/agents_mcp.md](../security/ai/agents_mcp.md) | Agentes, herramientas y MCP | catalogo | permanente | El problema estructural: confused deputy · Superficie del agente · Ataques específicos de agentes · MCP (Model Context Protocol) · Diseño seguro de h… |
 | [ai/ai.md](../security/ai/ai.md) | Seguridad de IA y LLM | catalogo | permanente | La premisa que lo explica todo · Marcos de referencia · OWASP LLM Top 10 (edición 2025) · Inyección de prompts · Manipulación de datos y del modelo ·… |
+| [art/art.md](../security/art/art.md) | Atomic Red Team — validación de detecciones | modelo | permanente | 1. Qué es y qué no es · 2. El modelo atómico · 3. Protocolo de una sesión de validación · 4. Los cuatro resultados posibles · 5. Lo que un atomic no… |
 | [attacks/collection_exfiltration.md](../security/attacks/collection_exfiltration.md) | Recolección y exfiltración | catalogo | permanente | Recolección · Preparación de los datos · Canales de exfiltración · Detección: qué buscar realmente · Prevención: qué reduce realmente el impacto · Co… |
 | [attacks/command_control.md](../security/attacks/command_control.md) | Command & Control e infraestructura del adversario | catalogo | permanente | Protocolos de canal · Ocultación y resiliencia de la infraestructura · Desarrollo de recursos del adversario (TA0042) · Cómo se detecta el beaconing… |
 | [attacks/credential_access.md](../security/attacks/credential_access.md) | Acceso a credenciales | catalogo | permanente | Volcado de credenciales del sistema operativo · Kerberos · Coacción de autenticación y relay · Almacenes de credenciales · Credenciales desprotegidas… |
@@ -54,8 +54,10 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | [attacks/impact.md](../security/attacks/impact.md) | Impacto | catalogo | permanente | Destrucción y denegación de datos · Interrupción de servicio · Manipulación y fraude · Impacto físico (OT/ICS) · Secuencia previa al impacto: la vent… |
 | [attacks/initial_access.md](../security/attacks/initial_access.md) | Acceso inicial | catalogo | permanente | Phishing e ingeniería social · Explotación de servicios expuestos · Credenciales válidas · Cadena de suministro y relaciones de confianza · Físico y… |
 | [attacks/lateral_movement.md](../security/attacks/lateral_movement.md) | Movimiento lateral | catalogo | permanente | Uso de material de autenticación alternativo · Servicios remotos · Herramientas de ejecución remota · Movimiento por infraestructura compartida · Mov… |
+| [attacks/network.md](../security/attacks/network.md) | Tácticas de ataque a redes | catalogo | permanente | 1. Conseguir la posición on-path (AiTM) · 2. Manipulación de la conmutación y el enrutamiento · 3. DNS como superficie · 4. El dispositivo de red com… |
 | [attacks/persistence.md](../security/attacks/persistence.md) | Persistencia | catalogo | permanente | Windows — arranque y sesión · Linux / Unix · Persistencia de identidad (la que sobrevive al formateo) · Persistencia de bajo nivel · Persistencia en… |
 | [attacks/privilege_escalation.md](../security/attacks/privilege_escalation.md) | Escalada de privilegios | catalogo | permanente | Windows — local · Linux — local · Active Directory — de usuario de dominio a Domain Admin · Cloud · Contenedores · Principios defensivos |
+| [attacks/reconnaissance_external.md](../security/attacks/reconnaissance_external.md) | Reconocimiento externo — técnicas adicionales | catalogo | permanente | Recolección de información pasiva · Reconocimiento activo · Cómo priorizar defensivamente |
 | [aws/aws.md](../security/aws/aws.md) | AWS | modelo | permanente | Modelo de permisos · Rutas de escalada en IAM · Registro y detección · Detecciones de alta prioridad · Configuración base de una cuenta · Servicios c… |
 | [azure/azure.md](../security/azure/azure.md) | Azure, Entra ID y Microsoft 365 | modelo | permanente | Dos planos de autorización distintos · Rutas de escalada en el directorio · Acceso condicional: la pieza central · Registro y detección · Detecciones… |
 | [blockchain/blockchain.md](../security/blockchain/blockchain.md) | Seguridad Blockchain / Web3 | catalogo | permanente | Premisa · Categorías de riesgo en Web3 · Incidentes notables en Web3 · Herramientas de seguridad Web3 · Fuentes de referencia |
@@ -151,7 +153,7 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | Documento | Título | Tipo | Estabilidad | Temas |
 |---|---|---|---|---|
 | [android/android_design.md](../mobile/android/android_design.md) | Diseño de interfaz en Android | modelo | permanente | Premisa · Por qué no se copia el diseño de iOS · El retroceso es un contrato, no un botón · Patrones de navegación · Interacción táctil · Cambios de… |
-| [android/android_exploits.md](../mobile/android/android_exploits.md) | Campañas y vulnerabilidades explotadas en Android | catalogo | volatil | Cómo leer esta tabla · Lo que no se corrige en el dispositivo · Cronología · Identificadores que circulan mal atribuidos |
+| [android/android_exploits.md](../mobile/android/android_exploits.md) | Campañas y vulnerabilidades explotadas en Android | catalogo | volatil | Cómo leer esta tabla · Fraude masivo sin vulnerabilidad · Lo que no se corrige en el dispositivo · Cronología · Identificadores que circulan mal atri… |
 | [android/android_forensics.md](../mobile/android/android_forensics.md) | Playbook — sospecha de compromiso de un Android | playbook | permanente | Premisa · Disparadores · Preservación — antes de tocar nada · Recolección · Artefactos de alto valor · Herramientas · Interpretación · Contención y r… |
 | [android/android_platform.md](../mobile/android/android_platform.md) | Restricciones de plataforma en Android | referencia | volatil | Premisa · El nivel de API objetivo: la puerta que caduca · Revisión de Google Play · Permisos y privacidad · Ejecución en segundo plano · Ciclo de ve… |
 | [android/android.md](../mobile/android/android.md) | Seguridad de la plataforma Android | modelo | permanente | Premisa · Modelo de amenaza por perfil · Superficie de ataque · La cadena de parcheo · Anatomía de una cadena · Arquitectura de mitigación · Vectores… |
@@ -177,12 +179,6 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 |---|---|---|---|---|
 | [README.md](../ai/README.md) | AI | readme | — | — |
 
-## Ataques (fuera de security/)
-
-| Documento | Título | Tipo | Estabilidad | Temas |
-|---|---|---|---|---|
-| [reconnaissance_external.md](../attacks/reconnaissance_external.md) | Reconocimiento externo — técnicas adicionales | catalogo | permanente | Recolección de información pasiva · Reconocimiento activo · Cómo priorizar defensivamente |
-
 ## Cloud
 
 | Documento | Título | Tipo | Estabilidad | Temas |
@@ -193,7 +189,7 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 
 | Documento | Título | Tipo | Estabilidad | Temas |
 |---|---|---|---|---|
-| [README.md](../frontend%20UX-UI/README.md) | Frontend UX-UI | readme | — | — |
+| [README.md](../frontend-ux-ui/README.md) | Frontend UX-UI | readme | — | — |
 
 ## Índice
 
@@ -218,11 +214,6 @@ Estos módulos caducan. Verificar en la fuente antes de afirmar nada operativo.
 
 ## Salud
 
-- Enlaces internos rotos: **4**
-  - `attacks/reconnaissance_external.md` → `discovery.md`
-  - `security/blockchain/blockchain.md` → `../attacks/network.md`
-  - `security/SKILL.md` → `art/art.md`
-  - `security/tls/tls.md` → `../attacks/network.md`
-- Módulos que ningún documento enlaza: **1**
-  - `backend/ARBOL.md`
+- Enlaces internos rotos: **0**
+- Módulos que ningún documento enlaza: **0**
 

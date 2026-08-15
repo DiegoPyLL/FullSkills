@@ -92,6 +92,7 @@ Regla dura: **nunca inventar** un número de rendimiento, un límite de un servi
 |---|---|
 | Vocabulario y métricas | [glossary.md](glossary.md) |
 | Antipatrones que cruzan varias ramas | [antipatterns.md](antipatterns.md) |
+| Taxonomía de diseño: qué módulos existen y con qué criterio se admite una práctica | [ARBOL.md](ARBOL.md) |
 
 ## 5. Convenciones de los módulos
 

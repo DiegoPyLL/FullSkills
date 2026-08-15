@@ -31,11 +31,9 @@ const DOMINIOS = {
   backend: 'Backend',
   mobile: 'Móvil',
   seo: 'SEO',
-  mobile: 'Móvil',
-  attacks: 'Ataques (fuera de security/)',
   ai: 'IA',
   cloud: 'Cloud',
-  'frontend UX-UI': 'Frontend UX-UI',
+  'frontend-ux-ui': 'Frontend UX-UI',
 };
 
 // ---------------------------------------------------------------- recorrido

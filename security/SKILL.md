@@ -83,10 +83,12 @@ Un agente que solo lista CVEs falla. Estos cuatro modelos son lo que hay que apl
 | Evasión de defensas | [attacks/defense_evasion.md](attacks/defense_evasion.md) |
 | Acceso a credenciales | [attacks/credential_access.md](attacks/credential_access.md) |
 | Descubrimiento | [attacks/discovery.md](attacks/discovery.md) |
+| Reconocimiento externo (anexo de descubrimiento) | [attacks/reconnaissance_external.md](attacks/reconnaissance_external.md) |
 | Movimiento lateral | [attacks/lateral_movement.md](attacks/lateral_movement.md) |
 | Command & Control | [attacks/command_control.md](attacks/command_control.md) |
 | Recolección y exfiltración | [attacks/collection_exfiltration.md](attacks/collection_exfiltration.md) |
 | Impacto | [attacks/impact.md](attacks/impact.md) |
+| Red (transversal): posición on-path, enrutamiento, DNS, túnel, DoS | [attacks/network.md](attacks/network.md) |
 
 **Plataformas**
 
