@@ -15,6 +15,7 @@
   - [/backend — ingeniería de backend](#backend--ingeniería-de-backend)
   - [/seo — SEO técnico](#seo--seo-técnico)
   - [/mobile — plataforma móvil](#mobile--plataforma-móvil)
+- [Skills de proceso](#skills-de-proceso)
 - [Convenciones](#convenciones)
 - [Mantenimiento](#mantenimiento)
 - [Roadmap](#roadmap)
@@ -155,6 +156,14 @@ Enrutador con seis modos (`ENDURECER`, `ANALIZAR_AMENAZA`, `RESPONDER_COMPROMISO
 | [`android/`](mobile/android/) | 5 | Modelo de amenaza, cadena de parcheo y nivel de parche real, arranque verificado, superficie y endurecimiento · catálogo fechado de CVE y campañas, con los identificadores que circulan mal atribuidos · playbook de triage y respuesta · nivel de API objetivo, revisión de Play, permisos y segundo plano · retroceso del sistema, navegación, cambios de configuración y accesibilidad |
 | [`practices/`](mobile/practices/) | 1 | Contrato con el servidor, red intermitente y sin conexión, rendimiento y energía, datos locales, observabilidad, entrega |
 | [`trends/`](mobile/trends/) | 1 | Criterio de adopción y direcciones de plataforma |
+
+---
+
+## Skills de proceso
+
+A diferencia de los dominios de arriba —cada uno un `SKILL.md` enrutador con módulos de conocimiento debajo—, hay 14 skills sueltas en la raíz que no enseñan un dominio técnico sino **cómo hacer ingeniería de software de forma disciplinada**: brainstorming, planeación, ejecución vía subagentes, TDD, debugging sistemático, verificación antes de completar, worktrees, revisión de código y cierre de rama. Cada una vive en su propia carpeta de primer nivel (`brainstorming/`, `writing-plans/`, `test-driven-development/`, etc.), igual que cualquier otro dominio.
+
+Documentación completa del flujo, con diagrama y tabla por skill: **[SKILLS-PROCESO.md](SKILLS-PROCESO.md)**.
 
 ---
 

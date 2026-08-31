@@ -1,9 +1,9 @@
 <!-- Generado por indice/scripts/indexar.mjs. No editar a mano: los cambios se pierden. -->
 # Índice global del repositorio
 
-Inventario completo de los 121 documentos del repositorio, con su tipo, su estabilidad y los temas que cubre cada uno. Sirve para decidir qué módulo cargar sin abrirlos todos. El enrutamiento con criterio está en [SKILL.md](SKILL.md).
+Inventario completo de los 161 documentos del repositorio, con su tipo, su estabilidad y los temas que cubre cada uno. Sirve para decidir qué módulo cargar sin abrirlos todos. El enrutamiento con criterio está en [SKILL.md](SKILL.md).
 
-**Generado:** 2026-08-15 · **Regenerar:** `node indice/scripts/indexar.mjs`
+**Generado:** 2026-08-31 · **Regenerar:** `node indice/scripts/indexar.mjs`
 
 ## Skills invocables
 
@@ -12,30 +12,59 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | Skill | Enrutador |
 |---|---|
 | `/backend` | [backend/SKILL.md](../backend/SKILL.md) |
+| `/brainstorming` | [brainstorming/SKILL.md](../brainstorming/SKILL.md) |
+| `/dispatching-parallel-agents` | [dispatching-parallel-agents/SKILL.md](../dispatching-parallel-agents/SKILL.md) |
+| `/executing-plans` | [executing-plans/SKILL.md](../executing-plans/SKILL.md) |
+| `/finishing-a-development-branch` | [finishing-a-development-branch/SKILL.md](../finishing-a-development-branch/SKILL.md) |
 | `/indice` | [indice/SKILL.md](SKILL.md) |
 | `/mobile` | [mobile/SKILL.md](../mobile/SKILL.md) |
+| `/receiving-code-review` | [receiving-code-review/SKILL.md](../receiving-code-review/SKILL.md) |
+| `/requesting-code-review` | [requesting-code-review/SKILL.md](../requesting-code-review/SKILL.md) |
 | `/security` | [security/SKILL.md](../security/SKILL.md) |
 | `/seo` | [seo/SKILL.md](../seo/SKILL.md) |
+| `/subagent-driven-development` | [subagent-driven-development/SKILL.md](../subagent-driven-development/SKILL.md) |
+| `/systematic-debugging` | [systematic-debugging/SKILL.md](../systematic-debugging/SKILL.md) |
+| `/test-driven-development` | [test-driven-development/SKILL.md](../test-driven-development/SKILL.md) |
+| `/using-git-worktrees` | [using-git-worktrees/SKILL.md](../using-git-worktrees/SKILL.md) |
+| `/using-superpowers` | [using-superpowers/SKILL.md](../using-superpowers/SKILL.md) |
+| `/verification-before-completion` | [verification-before-completion/SKILL.md](../verification-before-completion/SKILL.md) |
+| `/writing-plans` | [writing-plans/SKILL.md](../writing-plans/SKILL.md) |
+| `/writing-skills` | [writing-skills/SKILL.md](../writing-skills/SKILL.md) |
 
 ## Resumen
 
 | Dominio | Documentos | Enrutador |
 |---|---|---|
-| Raíz | 1 | — |
+| Raíz | 2 | — |
 | Ciberseguridad | 83 | [security/SKILL.md](../security/SKILL.md) |
 | Backend | 18 | [backend/SKILL.md](../backend/SKILL.md) |
 | Móvil | 13 | [mobile/SKILL.md](../mobile/SKILL.md) |
+| systematic-debugging | 9 | [systematic-debugging/SKILL.md](../systematic-debugging/SKILL.md) |
+| using-superpowers | 6 | [using-superpowers/SKILL.md](../using-superpowers/SKILL.md) |
+| writing-skills | 5 | [writing-skills/SKILL.md](../writing-skills/SKILL.md) |
+| subagent-driven-development | 4 | [subagent-driven-development/SKILL.md](../subagent-driven-development/SKILL.md) |
+| brainstorming | 3 | [brainstorming/SKILL.md](../brainstorming/SKILL.md) |
+| requesting-code-review | 2 | [requesting-code-review/SKILL.md](../requesting-code-review/SKILL.md) |
 | SEO | 2 | [seo/SKILL.md](../seo/SKILL.md) |
+| test-driven-development | 2 | [test-driven-development/SKILL.md](../test-driven-development/SKILL.md) |
+| writing-plans | 2 | [writing-plans/SKILL.md](../writing-plans/SKILL.md) |
 | IA | 1 | — |
 | Cloud | 1 | — |
+| dispatching-parallel-agents | 1 | [dispatching-parallel-agents/SKILL.md](../dispatching-parallel-agents/SKILL.md) |
+| executing-plans | 1 | [executing-plans/SKILL.md](../executing-plans/SKILL.md) |
+| finishing-a-development-branch | 1 | [finishing-a-development-branch/SKILL.md](../finishing-a-development-branch/SKILL.md) |
 | Frontend UX-UI | 1 | — |
 | Índice | 1 | [indice/SKILL.md](SKILL.md) |
+| receiving-code-review | 1 | [receiving-code-review/SKILL.md](../receiving-code-review/SKILL.md) |
+| using-git-worktrees | 1 | [using-git-worktrees/SKILL.md](../using-git-worktrees/SKILL.md) |
+| verification-before-completion | 1 | [verification-before-completion/SKILL.md](../verification-before-completion/SKILL.md) |
 
 ## Raíz
 
 | Documento | Título | Tipo | Estabilidad | Temas |
 |---|---|---|---|---|
-| [README.md](../README.md) | FullSkills | readme | — | Tabla de contenidos · Qué es esto · Inicio rápido · Dominios · Índice de skills · Convenciones · Mantenimiento · Roadmap · Contribuir |
+| [README.md](../README.md) | FullSkills | readme | — | Tabla de contenidos · Qué es esto · Inicio rápido · Dominios · Índice de skills · Skills de proceso · Convenciones · Mantenimiento · Roadmap · Contri… |
+| [SKILLS-PROCESO.md](../SKILLS-PROCESO.md) | Skills de proceso (flujo de desarrollo agéntico) | — | — | Qué es esto · Punto de entrada · El flujo principal (camino arquitectónico) · Skills transversales (se usan dentro de los pasos de arriba, no en secu… |
 
 ## Ciberseguridad
 
@@ -166,6 +195,65 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | [SKILL.md](../mobile/SKILL.md) | Skill de Móvil — índice y protocolo | enrutador | — | 1. Alcance: el dispositivo y el producto, no la app por dentro · 2. Protocolo de respuesta · 3. Núcleo de razonamiento · 4. Mapa de enrutamiento · 5.… |
 | [trends/trends.md](../mobile/trends/trends.md) | Tendencias de plataforma móvil | referencia | volatil | Cómo se usa este módulo · Direcciones estables · Decisiones que reaparecen · Límite |
 
+## systematic-debugging
+
+| Documento | Título | Tipo | Estabilidad | Temas |
+|---|---|---|---|---|
+| [condition-based-waiting.md](../systematic-debugging/condition-based-waiting.md) | Condition-Based Waiting | — | — | Overview · When to Use · Core Pattern · Quick Patterns · Implementation · Common Mistakes · When Arbitrary Timeout IS Correct · Real-World Impact |
+| [CREATION-LOG.md](../systematic-debugging/CREATION-LOG.md) | Creation Log: Systematic Debugging Skill | — | — | Source Material · Extraction Decisions · Structure Following skill-creation/SKILL.md · Bulletproofing Elements · Testing Approach · Iterations · Fina… |
+| [defense-in-depth.md](../systematic-debugging/defense-in-depth.md) | Defense-in-Depth Validation | — | — | Overview · Why Multiple Layers · The Four Layers · Applying the Pattern · Example from Session · Key Insight |
+| [root-cause-tracing.md](../systematic-debugging/root-cause-tracing.md) | Root Cause Tracing | — | — | Overview · When to Use · The Tracing Process · Adding Stack Traces · Finding Which Test Causes Pollution · Real Example: Empty projectDir · Key Princ… |
+| [SKILL.md](../systematic-debugging/SKILL.md) | Systematic Debugging | enrutador | — | Overview · The Iron Law · When to Use · The Four Phases · Red Flags - STOP and Follow Process · your human partner's Signals You're Doing It Wrong ·… |
+| [test-academic.md](../systematic-debugging/test-academic.md) | Academic Test: Systematic Debugging Skill | — | — | — |
+| [test-pressure-1.md](../systematic-debugging/test-pressure-1.md) | Pressure Test 1: Emergency Production Fix | — | — | Scenario · Your Options · Choose A, B, or C |
+| [test-pressure-2.md](../systematic-debugging/test-pressure-2.md) | Pressure Test 2: Sunk Cost + Exhaustion | — | — | Scenario · Your Options · Choose A, B, or C |
+| [test-pressure-3.md](../systematic-debugging/test-pressure-3.md) | Pressure Test 3: Authority + Social Pressure | — | — | Scenario · Your Options · Choose A, B, or C |
+
+## using-superpowers
+
+| Documento | Título | Tipo | Estabilidad | Temas |
+|---|---|---|---|---|
+| [references/antigravity-tools.md](../using-superpowers/references/antigravity-tools.md) | Antigravity CLI (`agy`) Tool Mapping | — | — | Task tracking |
+| [references/codex-tools.md](../using-superpowers/references/codex-tools.md) | — | — | — | Subagent dispatch requires multi-agent support · Waiting on children · Model routing on spawns · Environment Detection · Codex App Finishing |
+| [references/gemini-tools.md](../using-superpowers/references/gemini-tools.md) | Gemini CLI Tool Mapping | — | — | Instructions file · Personal skills directory · Subagent support · Additional Gemini CLI tools |
+| [references/hermes-tools.md](../using-superpowers/references/hermes-tools.md) | Hermes Agent Tool Mapping | — | — | Tools · Instructions file · Invoking a skill · Subagent dispatch · Task tracking |
+| [references/pi-tools.md](../using-superpowers/references/pi-tools.md) | Pi Tool Mapping | — | — | Subagents · Task lists |
+| [SKILL.md](../using-superpowers/SKILL.md) | — | enrutador | — | The Rule · Skill Priority · Red Flags · Platform Adaptation · User Instructions |
+
+## writing-skills
+
+| Documento | Título | Tipo | Estabilidad | Temas |
+|---|---|---|---|---|
+| [anthropic-best-practices.md](../writing-skills/anthropic-best-practices.md) | Skill authoring best practices | — | — | Core principles · Skill structure · Workflows and feedback loops · Content guidelines · Common patterns · Executive summary · Key findings · Recommen… |
+| [examples/CLAUDE_MD_TESTING.md](../writing-skills/examples/CLAUDE_MD_TESTING.md) | Testing CLAUDE.md Skills Documentation | — | — | Test Scenarios · Documentation Variants to Test · Testing Protocol · Success Criteria · Expected Results · Next Steps |
+| [persuasion-principles.md](../writing-skills/persuasion-principles.md) | Persuasion Principles for Skill Design | — | — | Overview · The Seven Principles · Principle Combinations by Skill Type · Why This Works: The Psychology · Ethical Use · Research Citations · Quick Re… |
+| [SKILL.md](../writing-skills/SKILL.md) | Writing Skills | enrutador | — | Overview · What is a Skill? · TDD Mapping for Skills · When to Create a Skill · Skill Types · Directory Structure · SKILL.md Structure · Skill Discov… |
+| [testing-skills-with-subagents.md](../writing-skills/testing-skills-with-subagents.md) | Testing Skills With Subagents | — | — | Overview · When to Use · TDD Mapping for Skill Testing · RED Phase: Baseline Testing (Watch It Fail) · GREEN Phase: Write Minimal Skill (Make It Pass… |
+
+## subagent-driven-development
+
+| Documento | Título | Tipo | Estabilidad | Temas |
+|---|---|---|---|---|
+| [implementer-prompt.md](../subagent-driven-development/implementer-prompt.md) | Implementer Subagent Prompt Template | — | — | — |
+| [re-review-prompt.md](../subagent-driven-development/re-review-prompt.md) | Scoped Re-Review Prompt Template | — | — | — |
+| [SKILL.md](../subagent-driven-development/SKILL.md) | Subagent-Driven Development | enrutador | — | When to Use · The Process · Setup · Model Selection · The Task Loop · Final Review · Finish · Common Rationalizations · Example Workflow |
+| [task-reviewer-prompt.md](../subagent-driven-development/task-reviewer-prompt.md) | Task Reviewer Prompt Template | — | — | — |
+
+## brainstorming
+
+| Documento | Título | Tipo | Estabilidad | Temas |
+|---|---|---|---|---|
+| [SKILL.md](../brainstorming/SKILL.md) | Brainstorming Ideas Into Designs | enrutador | — | Three Paths · Anti-Pattern: "Too Simple To Need Approval" · Red Flags · Checklist · Process Flow · The Process · After the Design (architectural path… |
+| [spec-document-reviewer-prompt.md](../brainstorming/spec-document-reviewer-prompt.md) | Spec Document Reviewer Prompt Template | — | — | — |
+| [visual-companion.md](../brainstorming/visual-companion.md) | Visual Companion Guide | — | — | When to Use · How It Works · Starting a Session · The Loop · Writing Content Fragments · CSS Classes Available · Browser Events Format · Design Tips… |
+
+## requesting-code-review
+
+| Documento | Título | Tipo | Estabilidad | Temas |
+|---|---|---|---|---|
+| [code-reviewer.md](../requesting-code-review/code-reviewer.md) | Code Reviewer Prompt Template | — | — | Example Output |
+| [SKILL.md](../requesting-code-review/SKILL.md) | Requesting Code Review | enrutador | — | When to Request Review · How to Request · Example · Common Rationalizations · Red Flags |
+
 ## SEO
 
 | Documento | Título | Tipo | Estabilidad | Temas |
@@ -173,17 +261,49 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | [seo-master.md](../seo/seo-master.md) | Manual de Auditoría Técnica SEO (2026) | — | — | Índice · 0. Cómo usar este manual · 1. Fase 0, preparación y línea base · 2. Bloque A, indexabilidad (P0) · 3. Bloque A, códigos de estado y redirecc… |
 | [SKILL.md](../seo/SKILL.md) | Skill de SEO técnico — índice y protocolo | enrutador | — | 1. Regla de oro: umbral o no entra · 2. Protocolo de respuesta · 3. Núcleo de razonamiento · 4. Mapa de enrutamiento · 5. Cruces con otros skills · 6… |
 
+## test-driven-development
+
+| Documento | Título | Tipo | Estabilidad | Temas |
+|---|---|---|---|---|
+| [SKILL.md](../test-driven-development/SKILL.md) | Test-Driven Development (TDD) | enrutador | — | Overview · When to Use · The Iron Law · Red-Green-Refactor · Good Tests · Common Rationalizations · Red Flags - STOP and Start Over · Example: Bug Fi… |
+| [writing-good-tests.md](../test-driven-development/writing-good-tests.md) | Writing Good Tests | — | — | Overview · Principle 1: Name the Break · Principle 2: Exercise the Real Thing · Tests Ship With the Implementation · The Mutation Check · Quick Refer… |
+
+## writing-plans
+
+| Documento | Título | Tipo | Estabilidad | Temas |
+|---|---|---|---|---|
+| [plan-document-reviewer-prompt.md](../writing-plans/plan-document-reviewer-prompt.md) | Plan Document Reviewer Prompt Template | — | — | — |
+| [SKILL.md](../writing-plans/SKILL.md) | Writing Plans | enrutador | — | Overview · Scope Check · File Structure · Task Right-Sizing · Bite-Sized Task Granularity · Plan Document Header · Task Structure · No Placeholders ·… |
+
 ## IA
 
 | Documento | Título | Tipo | Estabilidad | Temas |
 |---|---|---|---|---|
-| [README.md](../ai/README.md) | AI | readme | — | — |
+| [README.md](../ai/README.md) | IA | readme | — | — |
 
 ## Cloud
 
 | Documento | Título | Tipo | Estabilidad | Temas |
 |---|---|---|---|---|
 | [README.md](../cloud/README.md) | Cloud | readme | — | — |
+
+## dispatching-parallel-agents
+
+| Documento | Título | Tipo | Estabilidad | Temas |
+|---|---|---|---|---|
+| [SKILL.md](../dispatching-parallel-agents/SKILL.md) | Dispatching Parallel Agents | enrutador | — | Overview · When to Use · The Pattern · Agent Prompt Structure · Common Mistakes · When NOT to Use · Real Example from Session · Verification |
+
+## executing-plans
+
+| Documento | Título | Tipo | Estabilidad | Temas |
+|---|---|---|---|---|
+| [SKILL.md](../executing-plans/SKILL.md) | Executing Plans | enrutador | — | Overview · The Process · When to Stop and Ask for Help · When to Revisit Earlier Steps · Remember |
+
+## finishing-a-development-branch
+
+| Documento | Título | Tipo | Estabilidad | Temas |
+|---|---|---|---|---|
+| [SKILL.md](../finishing-a-development-branch/SKILL.md) | Finishing a Development Branch | enrutador | — | Overview · Step 1: Verify Tests · Step 2: Detect Environment · Step 3: Determine Base Branch · Step 4: Present Options · Step 5: Execute Choice · Ste… |
 
 ## Frontend UX-UI
 
@@ -196,6 +316,24 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | Documento | Título | Tipo | Estabilidad | Temas |
 |---|---|---|---|---|
 | [SKILL.md](SKILL.md) | Skill de Índice — enrutador maestro del repositorio | enrutador | — | 0. Skills invocables y despliegue · 1. Protocolo de enrutamiento · 2. Mapa de dominios · 3. Preguntas que cruzan dominios · 4. Estabilidad: lo que ca… |
+
+## receiving-code-review
+
+| Documento | Título | Tipo | Estabilidad | Temas |
+|---|---|---|---|---|
+| [SKILL.md](../receiving-code-review/SKILL.md) | Code Review Reception | enrutador | — | Overview · The Response Pattern · Forbidden Responses · Handling Unclear Feedback · Source-Specific Handling · YAGNI Check for "Professional" Feature… |
+
+## using-git-worktrees
+
+| Documento | Título | Tipo | Estabilidad | Temas |
+|---|---|---|---|---|
+| [SKILL.md](../using-git-worktrees/SKILL.md) | Using Git Worktrees | enrutador | — | Overview · Step 0: Detect Existing Isolation · Step 1: Create Isolated Workspace · Step 2: Project Setup · Step 3: Verify Clean Baseline · Quick Refe… |
+
+## verification-before-completion
+
+| Documento | Título | Tipo | Estabilidad | Temas |
+|---|---|---|---|---|
+| [SKILL.md](../verification-before-completion/SKILL.md) | Verification Before Completion | enrutador | — | Overview · The Iron Law · The Gate Function · Common Failures · Red Flags - STOP · Rationalization Prevention · Key Patterns · When To Apply |
 
 ## Material volátil
 
@@ -215,5 +353,22 @@ Estos módulos caducan. Verificar en la fuente antes de afirmar nada operativo.
 ## Salud
 
 - Enlaces internos rotos: **0**
-- Módulos que ningún documento enlaza: **0**
+- Módulos que ningún documento enlaza: **17**
+  - `brainstorming/spec-document-reviewer-prompt.md`
+  - `brainstorming/visual-companion.md`
+  - `systematic-debugging/condition-based-waiting.md`
+  - `systematic-debugging/CREATION-LOG.md`
+  - `systematic-debugging/defense-in-depth.md`
+  - `systematic-debugging/root-cause-tracing.md`
+  - `systematic-debugging/test-academic.md`
+  - `systematic-debugging/test-pressure-1.md`
+  - `systematic-debugging/test-pressure-2.md`
+  - `systematic-debugging/test-pressure-3.md`
+  - `using-superpowers/references/antigravity-tools.md`
+  - `using-superpowers/references/hermes-tools.md`
+  - `using-superpowers/references/pi-tools.md`
+  - `writing-plans/plan-document-reviewer-prompt.md`
+  - `writing-skills/anthropic-best-practices.md`
+  - `writing-skills/examples/CLAUDE_MD_TESTING.md`
+  - `writing-skills/persuasion-principles.md`
 
