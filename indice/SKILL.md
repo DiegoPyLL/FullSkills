@@ -1,6 +1,6 @@
 ---
 name: indice
-description: Índice maestro del repositorio FullSkills. Enruta cualquier pregunta al skill y al módulo concreto que la responde — ciberseguridad (ofensiva, defensiva, forense, cloud, IA, IR), backend (APIs, datos, concurrencia, fiabilidad, rendimiento, appsec, observabilidad, arquitectura, pruebas, entrega), móvil (seguridad del dispositivo iOS y Android, tiendas, diseño nativo, entrega) y SEO técnico — y mantiene el inventario completo en INDICE.md. Se invoca cuando no está claro qué skill aplica, cuando la pregunta cruza varios dominios, cuando hay que localizar dónde vive un tema, o cuando se añade, mueve o renombra un módulo y hay que reindexar.
+description: Índice maestro de FullSkills. Enruta preguntas a cloud, GenAI, ciberseguridad, backend, móvil o SEO y al módulo concreto que las responde. Se invoca cuando no está claro qué skill aplica, la pregunta cruza dominios, hay que localizar conocimiento o se añade, mueve o renombra un módulo y debe reindexarse.
 ---
 
 # Skill de Índice — enrutador maestro del repositorio
@@ -25,6 +25,8 @@ El contenido de este repositorio se despliega **suelto dentro del `.claude/skill
 | `/indice` | [indice/SKILL.md](SKILL.md) (este archivo) | No sé qué skill aplica, la pregunta cruza dominios, o hay que reindexar |
 | `/security` | [security/SKILL.md](../security/SKILL.md) | Seguridad ofensiva, defensiva, forense, IR |
 | `/backend` | [backend/SKILL.md](../backend/SKILL.md) | Diseño, datos, fiabilidad, rendimiento, entrega |
+| `/cloud` | [cloud/SKILL.md](../cloud/SKILL.md) | Arquitectura, servicios administrados, IAM, despliegue, operación y coste cloud |
+| `/genai` | [genai/SKILL.md](../genai/SKILL.md) | Aplicaciones con LLM: arquitectura, evaluación, inferencia y fallbacks |
 | `/mobile` | [mobile/SKILL.md](../mobile/SKILL.md) | Seguridad del dispositivo iOS y Android, y producto móvil: tiendas, diseño nativo, entrega |
 | `/seo` | [seo/SKILL.md](../seo/SKILL.md) | Auditoría y diagnóstico de SEO técnico |
 
@@ -34,7 +36,9 @@ Tres condiciones para que una carpeta se descubra como skill; `--check` las veri
 2. Cabecera con `name` y `description`. La descripción es lo único que decide la invocación automática: debe nombrar temas concretos y decir *cuándo* se usa.
 3. **Nombre de carpeta igual al `name`**, en minúsculas, dígitos y guiones.
 
-No hay skill para `ai/`, `cloud/` ni `frontend-ux-ui/`: están vacías y una skill sin contenido solo invita a inventar. Las tres ya llevan un nombre de carpeta válido, así que solo les falta `SKILL.md` con `name` idéntico cuando tengan contenido.
+No hay skill para `ai/` ni `frontend-ux-ui/`: siguen reservadas y una skill sin
+contenido solo invita a inventar. La construcción de sistemas generativos vive
+en `/genai`; la seguridad de IA permanece en `/security`.
 
 ## 1. Protocolo de enrutamiento
 
@@ -52,13 +56,17 @@ Regla común a todos los skills: **nunca inventar** un identificador (CVE, ATT&C
 |---|---|---|
 | Ciberseguridad | [security/SKILL.md](../security/SKILL.md) | Vulnerabilidades y CVEs, técnicas de ataque, detección e ingeniería de reglas, respuesta a incidentes, threat hunting, malware y ransomware, Active Directory, cloud, contenedores, red y perímetro, forense, CTI, pentesting, bug bounty, OT/ICS, IoT, hardware, privacidad, seguridad de IA y agentes |
 | Backend | [backend/SKILL.md](../backend/SKILL.md) | Diseño de APIs y contratos, modelado de datos y migraciones, concurrencia y colas, fiabilidad y modos de fallo, rendimiento y escalado, seguridad aplicada al desarrollo, observabilidad, arquitectura y límites de servicio, pruebas, entrega continua, calidad de código |
+| Cloud | [cloud/SKILL.md](../cloud/SKILL.md) | Selección de servicios y región, topologías, serverless y cargas administradas, IAM, secretos, infraestructura como código, observabilidad, recuperación y control de costes |
+| GenAI | [genai/SKILL.md](../genai/SKILL.md) | Aplicaciones con LLM, adaptadores de proveedor, prompts, contexto y RAG, herramientas, salidas estructuradas, evaluación, streaming, latencia, coste y fallbacks |
 | SEO técnico | [seo/SKILL.md](../seo/SKILL.md) | Auditoría técnica: indexabilidad, códigos de estado, rastreo, sitemaps, arquitectura de enlazado, rendimiento y Core Web Vitals, datos estructurados, internacionalización, migraciones |
 | Móvil | [mobile/SKILL.md](../mobile/SKILL.md) | Seguridad de la plataforma y del dispositivo, en iOS y en Android: spyware mercenario y cadenas sin interacción, cadena de parcheo y nivel de parche real, endurecimiento por perfil de riesgo, forense ante sospecha de compromiso. Y producto: revisión de App Store y de Google Play, nivel de API objetivo, permisos y privacidad, ejecución en segundo plano, diseño de interfaz nativa y accesibilidad, trabajo sin conexión, rendimiento y entrega |
 
-**Carpetas reservadas, todavía sin contenido**: [ai/](../ai/README.md), [cloud/](../cloud/README.md), [frontend-ux-ui/](../frontend-ux-ui/README.md). Mientras estén vacías, enrutar así:
+**Carpetas reservadas, todavía sin contenido**: [ai/](../ai/README.md) y
+[frontend-ux-ui/](../frontend-ux-ui/README.md). Mientras estén vacías, enrutar
+así:
 
-- IA/LLM/agentes → [security/ai/ai.md](../security/ai/ai.md) y [security/ai/agents_mcp.md](../security/ai/agents_mcp.md) (encuadre de seguridad; no hay material de construcción de sistemas de IA).
-- Cloud → [security/cloud/cloud.md](../security/cloud/cloud.md) más el módulo del proveedor ([aws](../security/aws/aws.md), [azure](../security/azure/azure.md), [gcp](../security/gcp/gcp.md)); la arquitectura cloud no de seguridad no está cubierta.
+- IA no generativa → no cubierta salvo su encuadre de seguridad en
+  [security/ai/ai.md](../security/ai/ai.md). Sistemas LLM y generativos → `/genai`.
 - Frontend/UX/UI → no cubierto salvo la parte de rendimiento y marcado que toca [seo/seo-master.md](../seo/seo-master.md) y la superficie web de [security/web/web.md](../security/web/web.md). Decirlo en vez de improvisar.
 
 ## 3. Preguntas que cruzan dominios
@@ -77,6 +85,8 @@ Cuando dos skills tocan el mismo tema, la diferencia es el **encuadre**, no el t
 | Móvil: dispositivo frente a app | [mobile/ios/ios.md](../mobile/ios/ios.md) · [mobile/android/android.md](../mobile/android/android.md) — seguridad del dispositivo y del sistema | [security/mobile/mobile.md](../security/mobile/mobile.md) — seguridad de la app que se construye (MASVS) |
 | Caída en producción | [backend/reliability/reliability.md](../backend/reliability/reliability.md) | [security/playbooks/ir_base.md](../security/playbooks/ir_base.md) si hay sospecha de intrusión |
 | Rendimiento web | [backend/performance/performance.md](../backend/performance/performance.md) (servidor) | [seo/seo-master.md](../seo/seo-master.md) (Core Web Vitals y rastreo) |
+| Arquitectura cloud frente a seguridad cloud | [cloud/SKILL.md](../cloud/SKILL.md) — seleccionar, desplegar, operar y costear | [security/cloud/cloud.md](../security/cloud/cloud.md) — atacar, detectar, endurecer y responder |
+| Aplicación GenAI frente a seguridad de IA | [genai/SKILL.md](../genai/SKILL.md) — construir, evaluar y operar | [security/ai/ai.md](../security/ai/ai.md) — amenazas, abuso y controles |
 
 Excepción declarada en móvil: la regla anterior repartiría el forense del terminal a `security/`, pero `mobile/` es un dominio **de plataforma**, no de actividad, y se queda con todo lo del dispositivo — incluido responder a un compromiso. La frontera es el objeto, no el verbo: **el dispositivo y el sistema son de `mobile/`; la app que se construye es de `security/mobile/`**. Quien pregunta *"¿dónde guardo este token?"* va a `security/`; quien pregunta *"¿me pueden entrar en el teléfono?"*, a `mobile/`.
 

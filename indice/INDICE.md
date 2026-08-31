@@ -1,7 +1,7 @@
 <!-- Generado por indice/scripts/indexar.mjs. No editar a mano: los cambios se pierden. -->
 # Índice global del repositorio
 
-Inventario completo de los 161 documentos del repositorio, con su tipo, su estabilidad y los temas que cubre cada uno. Sirve para decidir qué módulo cargar sin abrirlos todos. El enrutamiento con criterio está en [SKILL.md](SKILL.md).
+Inventario completo de los 169 documentos del repositorio, con su tipo, su estabilidad y los temas que cubre cada uno. Sirve para decidir qué módulo cargar sin abrirlos todos. El enrutamiento con criterio está en [SKILL.md](SKILL.md).
 
 **Generado:** 2026-08-31 · **Regenerar:** `node indice/scripts/indexar.mjs`
 
@@ -13,9 +13,11 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 |---|---|
 | `/backend` | [backend/SKILL.md](../backend/SKILL.md) |
 | `/brainstorming` | [brainstorming/SKILL.md](../brainstorming/SKILL.md) |
+| `/cloud` | [cloud/SKILL.md](../cloud/SKILL.md) |
 | `/dispatching-parallel-agents` | [dispatching-parallel-agents/SKILL.md](../dispatching-parallel-agents/SKILL.md) |
 | `/executing-plans` | [executing-plans/SKILL.md](../executing-plans/SKILL.md) |
 | `/finishing-a-development-branch` | [finishing-a-development-branch/SKILL.md](../finishing-a-development-branch/SKILL.md) |
+| `/genai` | [genai/SKILL.md](../genai/SKILL.md) |
 | `/indice` | [indice/SKILL.md](SKILL.md) |
 | `/mobile` | [mobile/SKILL.md](../mobile/SKILL.md) |
 | `/receiving-code-review` | [receiving-code-review/SKILL.md](../receiving-code-review/SKILL.md) |
@@ -41,7 +43,9 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | Móvil | 13 | [mobile/SKILL.md](../mobile/SKILL.md) |
 | systematic-debugging | 9 | [systematic-debugging/SKILL.md](../systematic-debugging/SKILL.md) |
 | using-superpowers | 6 | [using-superpowers/SKILL.md](../using-superpowers/SKILL.md) |
+| Cloud | 5 | [cloud/SKILL.md](../cloud/SKILL.md) |
 | writing-skills | 5 | [writing-skills/SKILL.md](../writing-skills/SKILL.md) |
+| GenAI | 4 | [genai/SKILL.md](../genai/SKILL.md) |
 | subagent-driven-development | 4 | [subagent-driven-development/SKILL.md](../subagent-driven-development/SKILL.md) |
 | brainstorming | 3 | [brainstorming/SKILL.md](../brainstorming/SKILL.md) |
 | requesting-code-review | 2 | [requesting-code-review/SKILL.md](../requesting-code-review/SKILL.md) |
@@ -49,7 +53,6 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | test-driven-development | 2 | [test-driven-development/SKILL.md](../test-driven-development/SKILL.md) |
 | writing-plans | 2 | [writing-plans/SKILL.md](../writing-plans/SKILL.md) |
 | IA | 1 | — |
-| Cloud | 1 | — |
 | dispatching-parallel-agents | 1 | [dispatching-parallel-agents/SKILL.md](../dispatching-parallel-agents/SKILL.md) |
 | executing-plans | 1 | [executing-plans/SKILL.md](../executing-plans/SKILL.md) |
 | finishing-a-development-branch | 1 | [finishing-a-development-branch/SKILL.md](../finishing-a-development-branch/SKILL.md) |
@@ -220,6 +223,16 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | [references/pi-tools.md](../using-superpowers/references/pi-tools.md) | Pi Tool Mapping | — | — | Subagents · Task lists |
 | [SKILL.md](../using-superpowers/SKILL.md) | — | enrutador | — | The Rule · Skill Priority · Red Flags · Platform Adaptation · User Instructions |
 
+## Cloud
+
+| Documento | Título | Tipo | Estabilidad | Temas |
+|---|---|---|---|---|
+| [architecture.md](../cloud/architecture.md) | Arquitectura cloud por restricciones | modelo | permanente | Ficha de decisión · Selección de forma de cómputo · Vertical slice |
+| [cost.md](../cloud/cost.md) | Coste cloud como restricción de diseño | modelo | permanente | Modelo antes que cifra · Controles · Forma de salida |
+| [operations.md](../cloud/operations.md) | Operación cloud reproducible | modelo | permanente | Identidad y secretos · Infraestructura y despliegue · Señales mínimas · Recuperación verificable |
+| [README.md](../cloud/README.md) | Cloud | readme | — | — |
+| [SKILL.md](../cloud/SKILL.md) | Skill de Cloud — decisiones y operación | enrutador | — | Protocolo · Enrutamiento · Núcleo de razonamiento · Fronteras |
+
 ## writing-skills
 
 | Documento | Título | Tipo | Estabilidad | Temas |
@@ -229,6 +242,15 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | [persuasion-principles.md](../writing-skills/persuasion-principles.md) | Persuasion Principles for Skill Design | — | — | Overview · The Seven Principles · Principle Combinations by Skill Type · Why This Works: The Psychology · Ethical Use · Research Citations · Quick Re… |
 | [SKILL.md](../writing-skills/SKILL.md) | Writing Skills | enrutador | — | Overview · What is a Skill? · TDD Mapping for Skills · When to Create a Skill · Skill Types · Directory Structure · SKILL.md Structure · Skill Discov… |
 | [testing-skills-with-subagents.md](../writing-skills/testing-skills-with-subagents.md) | Testing Skills With Subagents | — | — | Overview · When to Use · TDD Mapping for Skill Testing · RED Phase: Baseline Testing (Watch It Fail) · GREEN Phase: Write Minimal Skill (Make It Pass… |
+
+## GenAI
+
+| Documento | Título | Tipo | Estabilidad | Temas |
+|---|---|---|---|---|
+| [architecture.md](../genai/architecture.md) | Arquitectura de una capacidad GenAI | modelo | permanente | Contrato de tarea · Límite del proveedor · Escalera de complejidad · RAG |
+| [evaluation.md](../genai/evaluation.md) | Evaluación orientada a tareas | modelo | permanente | Dataset mínimo útil · Graders · Regresión y lanzamiento |
+| [operations.md](../genai/operations.md) | Operación de inferencia | modelo | permanente | Camino crítico · Telemetría mínima · Fallbacks honestos |
+| [SKILL.md](../genai/SKILL.md) | Skill de GenAI — producto probabilístico verificable | enrutador | — | Protocolo · Enrutamiento · Núcleo de razonamiento · Fronteras |
 
 ## subagent-driven-development
 
@@ -280,12 +302,6 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | Documento | Título | Tipo | Estabilidad | Temas |
 |---|---|---|---|---|
 | [README.md](../ai/README.md) | IA | readme | — | — |
-
-## Cloud
-
-| Documento | Título | Tipo | Estabilidad | Temas |
-|---|---|---|---|---|
-| [README.md](../cloud/README.md) | Cloud | readme | — | — |
 
 ## dispatching-parallel-agents
 

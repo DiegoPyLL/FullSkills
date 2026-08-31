@@ -13,6 +13,8 @@
   - [/indice — enrutador maestro](#indice--enrutador-maestro)
   - [/security — ciberseguridad](#security--ciberseguridad)
   - [/backend — ingeniería de backend](#backend--ingeniería-de-backend)
+  - [/cloud — arquitectura y operación cloud](#cloud--arquitectura-y-operación-cloud)
+  - [/genai — ingeniería de aplicaciones generativas](#genai--ingeniería-de-aplicaciones-generativas)
   - [/seo — SEO técnico](#seo--seo-técnico)
   - [/mobile — plataforma móvil](#mobile--plataforma-móvil)
 - [Skills de proceso](#skills-de-proceso)
@@ -43,6 +45,8 @@ proyecto-anfitrion/
     ├── indice/SKILL.md
     ├── security/SKILL.md
     ├── backend/SKILL.md
+    ├── cloud/SKILL.md
+    ├── genai/SKILL.md
     ├── seo/SKILL.md
     └── mobile/SKILL.md
 ```
@@ -81,14 +85,30 @@ Tres condiciones para que una carpeta se descubra como skill (las verifica `--ch
 | [`/indice`](#indice--enrutador-maestro) | 1 + INDICE | Enrutador maestro entre skills e inventario generado del repositorio |
 | [`/security`](#security--ciberseguridad) | 83 | Seguridad ofensiva, defensiva, forense, IR, cloud, contenedores, IA — 42 dominios |
 | [`/backend`](#backend--ingeniería-de-backend) | 18 | APIs, datos, concurrencia, fiabilidad, rendimiento, appsec, observabilidad, entrega — 11 dominios |
+| [`/cloud`](#cloud--arquitectura-y-operación-cloud) | 5 | Arquitectura, IAM, despliegue, operación, resiliencia y coste cloud |
+| [`/genai`](#genai--ingeniería-de-aplicaciones-generativas) | 4 | Arquitectura LLM, evaluación, inferencia, observabilidad y fallbacks |
 | [`/seo`](#seo--seo-técnico) | 2 | Auditoría de SEO técnico — manual de ejecución de 25 secciones + 4 anexos |
 | [`/mobile`](#mobile--plataforma-móvil) | 13 | Seguridad del dispositivo iOS y Android, diseño de app nativa, plataforma y entrega — 4 dominios |
 
-`ai/`, `cloud/` y `frontend-ux-ui/` están **reservadas y todavía vacías**: sin `SKILL.md` no se descubren como skill. Ver [Roadmap](#roadmap).
+`ai/` y `frontend-ux-ui/` están **reservadas y todavía vacías**: sin `SKILL.md`
+no se descubren como skill. La ingeniería de aplicaciones generativas vive en
+`genai/`; la seguridad de IA continúa en `security/ai/`.
 
 ---
 
 ## Índice de skills
+
+### /cloud — arquitectura y operación cloud
+
+`cloud/` — [`SKILL.md`](cloud/SKILL.md) · arquitectura por restricciones,
+operación reproducible y modelo de costes. Selecciona y opera servicios; la
+seguridad ofensiva, detección e incidentes cloud siguen en `security/`.
+
+### /genai — ingeniería de aplicaciones generativas
+
+`genai/` — [`SKILL.md`](genai/SKILL.md) · límites de proveedor, prompts y
+contexto, RAG, evaluaciones, streaming, latencia, coste y fallbacks. Construye y
+evalúa sistemas; las amenazas de IA y agentes siguen en `security/ai/`.
 
 ### /indice — enrutador maestro
 
@@ -195,7 +215,6 @@ Carpetas reservadas, aún sin `SKILL.md`, a la espera de enrutador y módulos:
 | Carpeta | Dominio previsto | Estado |
 |---|---|---|
 | `ai/` | Ingeniería de IA / LLMs / agentes | Reservada |
-| `cloud/` | Arquitectura e ingeniería cloud (más allá de la seguridad cloud ya cubierta en `/security`) | Reservada |
 | `frontend-ux-ui/` | Frontend y UX/UI | Reservada |
 
 ---

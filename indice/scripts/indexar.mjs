@@ -33,6 +33,7 @@ const DOMINIOS = {
   seo: 'SEO',
   ai: 'IA',
   cloud: 'Cloud',
+  genai: 'GenAI',
   'frontend-ux-ui': 'Frontend UX-UI',
 };
 
