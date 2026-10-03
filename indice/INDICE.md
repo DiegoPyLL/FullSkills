@@ -1,9 +1,9 @@
 <!-- Generado por indice/scripts/indexar.mjs. No editar a mano: los cambios se pierden. -->
 # Índice global del repositorio
 
-Inventario completo de los 169 documentos del repositorio, con su tipo, su estabilidad y los temas que cubre cada uno. Sirve para decidir qué módulo cargar sin abrirlos todos. El enrutamiento con criterio está en [SKILL.md](SKILL.md).
+Inventario completo de los 172 documentos del repositorio, con su tipo, su estabilidad y los temas que cubre cada uno. Sirve para decidir qué módulo cargar sin abrirlos todos. El enrutamiento con criterio está en [SKILL.md](SKILL.md).
 
-**Generado:** 2026-08-31 · **Regenerar:** `node indice/scripts/indexar.mjs`
+**Generado:** 2026-10-03 · **Regenerar:** `node indice/scripts/indexar.mjs`
 
 ## Skills invocables
 
@@ -38,7 +38,7 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | Dominio | Documentos | Enrutador |
 |---|---|---|
 | Raíz | 2 | — |
-| Ciberseguridad | 83 | [security/SKILL.md](../security/SKILL.md) |
+| Ciberseguridad | 86 | [security/SKILL.md](../security/SKILL.md) |
 | Backend | 18 | [backend/SKILL.md](../backend/SKILL.md) |
 | Móvil | 13 | [mobile/SKILL.md](../mobile/SKILL.md) |
 | systematic-debugging | 9 | [systematic-debugging/SKILL.md](../systematic-debugging/SKILL.md) |
@@ -98,6 +98,7 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | [cisa_kev.md](../security/cisa_kev.md) | Priorización de vulnerabilidades: KEV, EPSS y SSVC | modelo | volatil | Por qué no se prioriza por CVSS · KEV (CISA Known Exploited Vulnerabilities) · EPSS · SSVC — árbol de decisión · Fórmula operativa de priorización ·… |
 | [cloud/cloud.md](../security/cloud/cloud.md) | Seguridad en la nube — modelo transversal | modelo | permanente | Los cuatro cambios de modelo mental · Modelo de responsabilidad compartida · Cadena de ataque característica en la nube · IAM: los errores que causan… |
 | [containers/containers.md](../security/containers/containers.md) | Contenedores — modelo de aislamiento y escapes | modelo | permanente | Premisa fundamental · Vías de escape, por causa · Configuración segura de un contenedor · Seguridad de la imagen · Detección en tiempo de ejecución ·… |
+| [crypto/crypto.md](../security/crypto/crypto.md) | Criptografía aplicada a CTF | modelo | permanente | Premisa de reto · Codificación ≠ cifrado · XOR · Cifrados clásicos · RSA — el rey del CTF de crypto · AES y modos de bloque · Hashing · Protocolo de… |
 | [cti/cti.md](../security/cti/cti.md) | Threat Intelligence (CTI) | modelo | permanente | Niveles de CTI · Frameworks de análisis CTI · Fuentes de inteligencia · Formatos estandarizados · TTP-based intelligence vs IOC-based intelligence ·… |
 | [cve_database.md](../security/cve_database.md) | Base de CVEs — esquema y fichas de referencia | referencia | volatil | Esquema canónico · Ficha 1 — Log4Shell · Ficha 2 — Zerologon · Ficha 3 — CitrixBleed · Ficha 4 — ProxyShell · Ficha 5 — MOVEit Transfer · Ficha 6 — B… |
 | [cwe.md](../security/cwe.md) | CWE — causa raíz de la vulnerabilidad | taxonomia | permanente | Regla de asignación · Top 25 (edición 2024) con causa y corrección estructural · Clases estructurales para razonar (más útiles que el ranking) · Rela… |
@@ -146,9 +147,11 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | [ransomware/ransomware.md](../security/ransomware/ransomware.md) | Ransomware | modelo | permanente | El modelo RaaS · Evolución de la extorsión · Cadena de intrusión típica · Objetivos preferentes del atacante · Defensa: lo que realmente cambia el re… |
 | [README.md](../security/README.md) | Skills de Ciberseguridad | readme | — | Cómo funciona · Estructura del repositorio · Convenciones de los módulos · Límites · Uso |
 | [references/references.md](../security/references/references.md) | Fuentes externas | referencia | volatil | Vulnerabilidades · Taxonomías y marcos · Detección y reglas · Inteligencia de amenazas · Herramientas de análisis · Formación y validación · Cómo cit… |
+| [reversing/reversing.md](../security/reversing/reversing.md) | Reversing y explotación binaria (pwn) | modelo | permanente | Primer triage de un binario · Reversing: entender sin fuente · Pwn: de bug a shell · pwntools — el estándar de explotación · Protocolo de trabajo · H… |
 | [sigma/sigma.md](../security/sigma/sigma.md) | Sigma | referencia | permanente | Estructura · Campos obligatorios y su función · Modificadores de campo · Fuentes de log habituales · Ejemplos de valor alto · Buenas prácticas · Erro… |
 | [SKILL.md](../security/SKILL.md) | Skill de Ciberseguridad — índice y protocolo | enrutador | — | 1. Regla de oro: permanente vs. volátil · 2. Protocolo de respuesta · 3. Núcleo de razonamiento · 4. Mapa de enrutamiento · 5. Convenciones de los mó… |
 | [snort/snort.md](../security/snort/snort.md) | Snort | referencia | permanente | Anatomía de una regla · Variables · Opciones esenciales · Rendimiento · Ejemplos · Limitaciones · Operación del conjunto de reglas |
+| [stego/stego.md](../security/stego/stego.md) | Esteganografía y datos ocultos | modelo | permanente | Regla de oro: identificar antes de abrir · Mapa de técnicas por portador · Imágenes — el caso que más pediste · Audio · Texto y Unicode · Archivos co… |
 | [suricata/suricata.md](../security/suricata/suricata.md) | Suricata | referencia | permanente | Lo que aporta sobre Snort · Palabras clave por protocolo · Ejemplos de valor alto · Análisis con EVE · Despliegue · Errores frecuentes |
 | [tls/tls.md](../security/tls/tls.md) | TLS y Protocolos de Red | catalogo | permanente | TLS — conceptos clave · Cipher suites y su seguridad · Ataques a TLS conocidos · TLS 1.3 — Mejoras clave · Hardening de TLS · Protocolos de red y seg… |
 | [vmware/vmware.md](../security/vmware/vmware.md) | VMware vSphere y ESXi | modelo | permanente | Por qué es objetivo prioritario · Rutas de compromiso · Hardening · Detección · Ransomware sobre ESXi · Respuesta |
@@ -372,8 +375,8 @@ Estos módulos caducan. Verificar en la fuente antes de afirmar nada operativo.
 - Módulos que ningún documento enlaza: **17**
   - `brainstorming/spec-document-reviewer-prompt.md`
   - `brainstorming/visual-companion.md`
-  - `systematic-debugging/condition-based-waiting.md`
   - `systematic-debugging/CREATION-LOG.md`
+  - `systematic-debugging/condition-based-waiting.md`
   - `systematic-debugging/defense-in-depth.md`
   - `systematic-debugging/root-cause-tracing.md`
   - `systematic-debugging/test-academic.md`
