@@ -25,6 +25,7 @@ El punto de entrada es [SKILL.md](SKILL.md), que actúa como enrutador: no conti
 | `firewalls/`, `vpn/` | Red y perímetro |
 | `web/`, `mobile/`, `ai/` | Seguridad de aplicaciones, mobile e IA/LLM/agentes |
 | `malware/`, `ransomware/` | Adversario: familias de malware y ransomware |
+| `crypto/`, `stego/`, `reversing/` | Criptografía ofensiva de CTF, esteganografía y datos ocultos, reversing y explotación binaria |
 | `detection/`, `hunting/`, `hardening/`, `ioc/` | Defensa: ingeniería de detección, threat hunting, hardening, IOC |
 | `yara/`, `sigma/`, `snort/`, `suricata/` | Firmas y reglas de detección |
 | `playbooks/` | Respuesta a incidentes (base común + específicos por tecnología) |

@@ -1,6 +1,6 @@
 ---
 name: security
-description: Base de conocimiento de ciberseguridad para razonar (no solo listar) sobre vulnerabilidades, CVEs, threat intelligence, respuesta a incidentes, blue/red team, threat hunting, malware, Active Directory, cloud, contenedores, firewalls, VPN, sistemas operativos, seguridad de IA/LLM/agentes, supply chain, web, mobile, OT/ICS, Zero Trust, MITRE ATT&CK, IoT, blockchain, pentesting, bug bounty, forense digital, privacidad, hardware, TLS y protocolos de red. Se invoca cuando la pregunta es de seguridad ofensiva, defensiva, forense o de arquitectura, o cuando hay que analizar un CVE, una técnica de ataque, una detección o un incidente.
+description: Base de conocimiento de ciberseguridad para razonar (no solo listar) sobre vulnerabilidades, CVEs, threat intelligence, respuesta a incidentes, blue/red team, threat hunting, malware, Active Directory, cloud, contenedores, firewalls, VPN, sistemas operativos, seguridad de IA/LLM/agentes, supply chain, web, mobile, OT/ICS, Zero Trust, MITRE ATT&CK, IoT, blockchain, pentesting, bug bounty, forense digital, privacidad, hardware, TLS y protocolos de red, criptografía ofensiva de CTF, esteganografía, reversing y explotación binaria. Se invoca cuando la pregunta es de seguridad ofensiva, defensiva, forense o de arquitectura, o cuando hay que analizar un CVE, una técnica de ataque, una detección o un incidente.
 ---
 
 # Skill de Ciberseguridad — índice y protocolo
@@ -190,6 +190,14 @@ Base común obligatoria: [playbooks/ir_base.md](playbooks/ir_base.md). Específi
 | Seguridad de hardware: side-channel, Spectre/Meltdown, TPM, Secure Boot | [hardware/hardware.md](hardware/hardware.md) |
 | TLS y cifrado en transporte | [tls/tls.md](tls/tls.md) |
 | Blockchain / Web3: smart contracts, DeFi, wallets | [blockchain/blockchain.md](blockchain/blockchain.md) |
+
+**Criptografía ofensiva y CTF** (`permanente`)
+
+| Tema | Módulo |
+|---|---|
+| Romper RSA/AES/XOR/clásicos, hashing, length extension, padding oracle | [crypto/crypto.md](crypto/crypto.md) |
+| Datos ocultos: esteganografía, LSB, metadatos, archivos anexados, polyglots | [stego/stego.md](stego/stego.md) |
+| Reversing (Ghidra, gdb) y explotación binaria (overflow, ROP, pwntools) | [reversing/reversing.md](reversing/reversing.md) |
 
 **Threat Intelligence**
 
