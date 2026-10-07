@@ -1,9 +1,9 @@
 <!-- Generado por indice/scripts/indexar.mjs. No editar a mano: los cambios se pierden. -->
 # Índice global del repositorio
 
-Inventario completo de los 172 documentos del repositorio, con su tipo, su estabilidad y los temas que cubre cada uno. Sirve para decidir qué módulo cargar sin abrirlos todos. El enrutamiento con criterio está en [SKILL.md](SKILL.md).
+Inventario completo de los 174 documentos del repositorio, con su tipo, su estabilidad y los temas que cubre cada uno. Sirve para decidir qué módulo cargar sin abrirlos todos. El enrutamiento con criterio está en [SKILL.md](SKILL.md).
 
-**Generado:** 2026-10-03 · **Regenerar:** `node indice/scripts/indexar.mjs`
+**Generado:** 2026-10-07 · **Regenerar:** `node indice/scripts/indexar.mjs`
 
 ## Skills invocables
 
@@ -13,6 +13,7 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 |---|---|
 | `/backend` | [backend/SKILL.md](../backend/SKILL.md) |
 | `/brainstorming` | [brainstorming/SKILL.md](../brainstorming/SKILL.md) |
+| `/cai` | [cai/SKILL.md](../cai/SKILL.md) |
 | `/cloud` | [cloud/SKILL.md](../cloud/SKILL.md) |
 | `/dispatching-parallel-agents` | [dispatching-parallel-agents/SKILL.md](../dispatching-parallel-agents/SKILL.md) |
 | `/executing-plans` | [executing-plans/SKILL.md](../executing-plans/SKILL.md) |
@@ -48,6 +49,7 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | GenAI | 4 | [genai/SKILL.md](../genai/SKILL.md) |
 | subagent-driven-development | 4 | [subagent-driven-development/SKILL.md](../subagent-driven-development/SKILL.md) |
 | brainstorming | 3 | [brainstorming/SKILL.md](../brainstorming/SKILL.md) |
+| cai | 2 | [cai/SKILL.md](../cai/SKILL.md) |
 | requesting-code-review | 2 | [requesting-code-review/SKILL.md](../requesting-code-review/SKILL.md) |
 | SEO | 2 | [seo/SKILL.md](../seo/SKILL.md) |
 | test-driven-development | 2 | [test-driven-development/SKILL.md](../test-driven-development/SKILL.md) |
@@ -272,6 +274,13 @@ Cada carpeta con `SKILL.md` es una skill invocable con `/<nombre>` una vez despl
 | [spec-document-reviewer-prompt.md](../brainstorming/spec-document-reviewer-prompt.md) | Spec Document Reviewer Prompt Template | — | — | — |
 | [visual-companion.md](../brainstorming/visual-companion.md) | Visual Companion Guide | — | — | When to Use · How It Works · Starting a Session · The Loop · Writing Content Fragments · CSS Classes Available · Browser Events Format · Design Tips… |
 
+## cai
+
+| Documento | Título | Tipo | Estabilidad | Temas |
+|---|---|---|---|---|
+| [operacion.md](../cai/operacion.md) | CAI (Cybersecurity AI) — operación en CTF | operacion | volatil | Qué es y estado · Arquitectura: los 8 pilares · Agentes registrados · Flujo para un reto CTF · Comandos del REPL · Guardarraíles y coste · Límites y… |
+| [SKILL.md](../cai/SKILL.md) | Skill de CAI — enrutador y protocolo | enrutador | — | 1. Regla de oro: CAI es apoyo, no oráculo · 2. Protocolo de respuesta · 3. Mapa de enrutamiento · 4. Cruces con otros skills · 5. Límites |
+
 ## requesting-code-review
 
 | Documento | Título | Tipo | Estabilidad | Temas |
@@ -360,6 +369,7 @@ Estos módulos caducan. Verificar en la fuente antes de afirmar nada operativo.
 
 | Módulo | Snapshot | Fuente de verificación |
 |---|---|---|
+| [cai/operacion.md](../cai/operacion.md) | — | https://github.com/aliasrobotics/cai |
 | [mobile/android/android_exploits.md](../mobile/android/android_exploits.md) | 2026-08 | https://source.android.com/docs/security/bulletin |
 | [mobile/android/android_platform.md](../mobile/android/android_platform.md) | 2026-08 | https://support.google.com/googleplay/android-developer |
 | [mobile/ios/ios_exploits.md](../mobile/ios/ios_exploits.md) | 2026-08 | https://support.apple.com/en-us/100100 |

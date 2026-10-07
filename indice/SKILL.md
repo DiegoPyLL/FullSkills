@@ -25,6 +25,7 @@ El contenido de este repositorio se despliega **suelto dentro del `.claude/skill
 | `/indice` | [indice/SKILL.md](SKILL.md) (este archivo) | No sé qué skill aplica, la pregunta cruza dominios, o hay que reindexar |
 | `/security` | [security/SKILL.md](../security/SKILL.md) | Seguridad ofensiva, defensiva, forense, IR |
 | `/backend` | [backend/SKILL.md](../backend/SKILL.md) | Diseño, datos, fiabilidad, rendimiento, entrega |
+| `/cai` | [cai/SKILL.md](../cai/SKILL.md) | Conducir el framework CAI (agentes IA) para resolver retos CTF |
 | `/cloud` | [cloud/SKILL.md](../cloud/SKILL.md) | Arquitectura, servicios administrados, IAM, despliegue, operación y coste cloud |
 | `/genai` | [genai/SKILL.md](../genai/SKILL.md) | Aplicaciones con LLM: arquitectura, evaluación, inferencia y fallbacks |
 | `/mobile` | [mobile/SKILL.md](../mobile/SKILL.md) | Seguridad del dispositivo iOS y Android, y producto móvil: tiendas, diseño nativo, entrega |
