@@ -198,6 +198,7 @@ Base común obligatoria: [playbooks/ir_base.md](playbooks/ir_base.md). Específi
 | Romper RSA/AES/XOR/clásicos, hashing, length extension, padding oracle | [crypto/crypto.md](crypto/crypto.md) |
 | Datos ocultos: esteganografía, LSB, metadatos, archivos anexados, polyglots | [stego/stego.md](stego/stego.md) |
 | Reversing (Ghidra, gdb) y explotación binaria (overflow, ROP, pwntools) | [reversing/reversing.md](reversing/reversing.md) |
+| Orquestar agentes IA para resolver retos (framework CAI) | skill aparte [../cai/SKILL.md](../cai/SKILL.md) |
 
 **Threat Intelligence**
 
